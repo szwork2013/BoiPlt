@@ -1,0 +1,153 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{75A140FD-AD8D-4381-97E1-D1FE9094EB6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern", "External\Repository.Pattern\Repository.Pattern.csproj", "{6E682A14-C872-4813-B620-76E108DEA683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Pattern.Ef6", "External\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj", "{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Pattern", "External\Service.Pattern\Service.Pattern.csproj", "{86F86650-EE3C-4372-8FEC-40C2FE015022}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{39A488E0-327B-46F0-8200-DCCB5018B9DB}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EEB6BB1-82E5-44DE-9B30-E56C5F87245F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		Readme.Txt = Readme.Txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protiviti.Boilerplate.Docs", "Protiviti.Boilerplate.Docs\Protiviti.Boilerplate.Docs.csproj", "{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protiviti.Boilerplate.Test", "Protiviti.Boilerplate.Test\Protiviti.Boilerplate.Test.csproj", "{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protiviti.Boilerplate.Server", "Protiviti.Boilerplate.Server\Protiviti.Boilerplate.Server.csproj", "{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protiviti.Boilerplate.Client", "Protiviti.Boilerplate.Client\Protiviti.Boilerplate.Client.csproj", "{0BCC620A-B9E6-497F-8828-2170695AFF67}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://protivitipss.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = External\\Repository.Pattern\\Repository.Pattern.csproj
+		SccProjectTopLevelParentUniqueName1 = Protiviti.BoilerPlate.sln
+		SccProjectName1 = External/Repository.Pattern
+		SccLocalPath1 = External\\Repository.Pattern
+		SccProjectUniqueName2 = External\\Repository.Pattern.Ef6\\Repository.Pattern.Ef6.csproj
+		SccProjectTopLevelParentUniqueName2 = Protiviti.BoilerPlate.sln
+		SccProjectName2 = External/Repository.Pattern.Ef6
+		SccLocalPath2 = External\\Repository.Pattern.Ef6
+		SccProjectUniqueName3 = External\\Service.Pattern\\Service.Pattern.csproj
+		SccProjectTopLevelParentUniqueName3 = Protiviti.BoilerPlate.sln
+		SccProjectName3 = External/Service.Pattern
+		SccLocalPath3 = External\\Service.Pattern
+		SccProjectUniqueName4 = Protiviti.Boilerplate.Docs\\Protiviti.Boilerplate.Docs.csproj
+		SccProjectName4 = Protiviti.Boilerplate.Docs
+		SccLocalPath4 = Protiviti.Boilerplate.Docs
+		SccProjectUniqueName5 = Protiviti.Boilerplate.Test\\Protiviti.Boilerplate.Test.csproj
+		SccProjectName5 = Protiviti.Boilerplate.Test
+		SccLocalPath5 = Protiviti.Boilerplate.Test
+		SccProjectUniqueName6 = Protiviti.Boilerplate.Server\\Protiviti.Boilerplate.Server.csproj
+		SccProjectName6 = Protiviti.Boilerplate.Server
+		SccLocalPath6 = Protiviti.Boilerplate.Server
+		SccProjectUniqueName7 = Protiviti.Boilerplate.Client\\Protiviti.Boilerplate.Client.csproj
+		SccProjectName7 = Protiviti.Boilerplate.Client
+		SccLocalPath7 = Protiviti.Boilerplate.Client
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+		VISIBLEBROWSER|Any CPU = VISIBLEBROWSER|Any CPU
+		VISIBLEBROWSER|x86 = VISIBLEBROWSER|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|x86.ActiveCfg = Debug|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.Debug|x86.Build.0 = Debug|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|x86.ActiveCfg = Release|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.Release|x86.Build.0 = Release|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.VISIBLEBROWSER|Any CPU.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.VISIBLEBROWSER|Any CPU.Build.0 = VISIBLEBROWSER|Any CPU
+		{6E682A14-C872-4813-B620-76E108DEA683}.VISIBLEBROWSER|x86.ActiveCfg = VISIBLEBROWSER|x86
+		{6E682A14-C872-4813-B620-76E108DEA683}.VISIBLEBROWSER|x86.Build.0 = VISIBLEBROWSER|x86
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.Release|x86.ActiveCfg = Release|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.VISIBLEBROWSER|Any CPU.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.VISIBLEBROWSER|Any CPU.Build.0 = VISIBLEBROWSER|Any CPU
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}.VISIBLEBROWSER|x86.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.Release|x86.ActiveCfg = Release|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.VISIBLEBROWSER|Any CPU.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.VISIBLEBROWSER|Any CPU.Build.0 = VISIBLEBROWSER|Any CPU
+		{86F86650-EE3C-4372-8FEC-40C2FE015022}.VISIBLEBROWSER|x86.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.Release|x86.ActiveCfg = Release|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.VISIBLEBROWSER|Any CPU.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.VISIBLEBROWSER|Any CPU.Build.0 = VISIBLEBROWSER|Any CPU
+		{10854D5E-B63D-4574-8AC7-4A7AEE1FA79A}.VISIBLEBROWSER|x86.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.Release|x86.ActiveCfg = Release|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.VISIBLEBROWSER|Any CPU.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.VISIBLEBROWSER|Any CPU.Build.0 = VISIBLEBROWSER|Any CPU
+		{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}.VISIBLEBROWSER|x86.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.Release|x86.ActiveCfg = Release|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.VISIBLEBROWSER|Any CPU.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.VISIBLEBROWSER|Any CPU.Build.0 = VISIBLEBROWSER|Any CPU
+		{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}.VISIBLEBROWSER|x86.ActiveCfg = VISIBLEBROWSER|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.Release|x86.ActiveCfg = Release|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.VISIBLEBROWSER|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.VISIBLEBROWSER|Any CPU.Build.0 = Release|Any CPU
+		{0BCC620A-B9E6-497F-8828-2170695AFF67}.VISIBLEBROWSER|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E682A14-C872-4813-B620-76E108DEA683} = {75A140FD-AD8D-4381-97E1-D1FE9094EB6A}
+		{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C} = {75A140FD-AD8D-4381-97E1-D1FE9094EB6A}
+		{86F86650-EE3C-4372-8FEC-40C2FE015022} = {75A140FD-AD8D-4381-97E1-D1FE9094EB6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+	EndGlobalSection
+EndGlobal
