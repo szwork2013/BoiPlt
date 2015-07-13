@@ -1,0 +1,19 @@
+﻿<div class="well">
+    <p>**initiatives.details.html**</p>
+    <h2>{{initiative.Name}}</h2>
+    <ul>
+        <li ng-repeat="task in initiative.Tasks">
+
+            <!-- Here's another ui-sref except THIS time we are passing parameters
+            AND inheriting parameters from active ancestor states. So we don't
+            need to resupply the d parameter. -->
+            <a ui-sref="initiatives.detail.task({taskId:task.Id})">{{task.TaskName}}</a>
+        </li>
+    </ul>
+    <div ui-view class="slide">
+        <!-- Example of default content. This content will be replace as soon as
+            this ui-view is populate with a template -->
+        <small class="muted">Click on a task item to view and/or edit it.</small>
+    </div>
+</div>
+    

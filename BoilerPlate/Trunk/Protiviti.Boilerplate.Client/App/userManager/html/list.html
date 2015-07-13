@@ -1,0 +1,83 @@
+﻿<section id="listusers-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a ui-sref="registration" id="registerBtn" class="btn btn-primary navbar-right"><i class="fa fa-plus fa-fw"></i> Register</a>
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Users">
+                                    Users
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+
+                            <div class="panel-body" id="Users-Header">
+                                <form class="form-inline" ng-submit="searchUsers()" role="form">
+                                    <div class="form-group">
+                                        <input type="text" id="searchBox" class="form-control input-sm" ng-model="pagingInfo.nameFilter" placeholder="Search...">
+                                        <button type="submit" id="searchBtn" class="btn btn-info btn-sm"><strong>Search</strong></button>                                 
+                                    </div>
+                                </form>
+                                <br />
+                                <table class="table table-condensed table-striped" id="Users">
+                                    <thead>
+                                        <tr>
+                                            <th id="Users-Results-Header-Id"><a href="" ng-click="sortUsers('Id')">Id</a></th>
+                                            <th id="Users-Results-Header-Email"><a href="" ng-click="sortUsers('UserName')">Email</a></th>
+                                            <th id="Users-Results-Header-FullName"><a href="" ng-click="sortUsers('FirstName')">Full Name</a></th>
+                                            <th id="Users-Results-Header-Phone"><a href="">Phone</a></th>
+                                            <th id="Users-Results-Header-Address"><a href="">Address</a></th>
+                                            <th id="Users-Results-Header-IsActive"><a href="">Active</a></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in users" id="{{p.UserName}}">
+                                            <td id="Id">{{p.Id }}</td>
+                                            <td id="Email">{{p.UserName }}</td>
+                                            <td id="FullName">{{p.FullName }} </td>
+                                            <td id="Phone">{{p.Contact.Phone}}</td>
+                                            <td id="Address">
+                                                <div class="medium">
+                                                    <div ng-bind-template="{{p.Address.AddressLine1}} {{p.Address.AddressLine2}}"></div>
+                                                    <div ng-bind-template="{{p.Address.CityLocality}}, {{p.Address.StateProvince}}"></div>
+                                                    <div ng-bind-template="{{p.Address.Country}}  {{p.Address.PostalCode}}"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span ng-if="p.IsActive" id="isActive">Yes</span>
+                                                <span ng-if="!p.IsActive" id="isActive">No</span>
+                                            </td>
+                                            <td>
+                                                <a href="#/users/userId={{p.UserName}}" ng-if="p.IsActive"  id="edit{{p.UserName}}"><i class="fa fa-pencil fa-fw"></i></a>
+                                                <!--<div ng-if="p.IsEditable == 'true' ">
+                                                    <a href="#/roles/roleId={{p.Id}}"><i class="fa fa-pencil fa-fw"></i></a>
+                                                </div>-->
+                                                <a access="Admin" id="deleteUser{{p.UserName}}" href="javascript:void(0)" ng-if="p.IsActive" data-ng-click="deleteUser(p.UserName,p.FullName) "><i class="fa fa-trash-o fa-fw"></i></a>
+                                                <button type="submit" id="activateUser{{p.UserName}}" ng-if="!p.IsActive" class="btn btn-info btn-sm" data-ng-click="activateUser(p.UserName, p.FullName)"><strong>Activate</strong></button>
+                                            </td>
+
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <a title="Go to the first page" id="First-Page" class="btn btn-info btn-sm" href="" ng-click="selectFirstPage()">First Page</a>
+                                    <a title="Go to the previous page" id="Prev-Page" class="btn btn-info btn-sm" href="" ng-click="selectPreviosPage()">Previous Page</a>
+                                    <span id="pagenumber">&nbspPage: {{pagingInfo.page}}&nbsp&nbsp</span>
+                                    <a title="Go to the next page" id="Next-Page" class="btn btn-info btn-sm" href="" ng-click="selectNextPage()">Next Page</a>
+                                </div>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

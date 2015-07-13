@@ -1,0 +1,49 @@
+﻿
+
+<section id="role-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <ul>
+                <li><a id="backtolist" href="javascript:void(0)" ng-click="back()">Back to list</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="matter">
+        <div class="container">
+
+            <div id="message" data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                <strong> {{message}}</strong>
+            </div>
+
+            <div class="page-header">
+                <h1>
+                    {{ title }} :<span ng-show="role.Id">{{role.Name}}</span>
+                </h1>
+            </div>
+            <form name="editForm" novalidate>
+                <div>
+                    <div class="row">
+                        <div id="rolenamelabel" class="col-md-2">
+                            Role Name:
+                        </div>
+                        <div class="col-md-10">
+                            <input id="txtRoleName" type="text" name="roleName" class="form-control" data-ng-model="role.Name" required />
+                            <span  class="errorMessage" ng-show="addEditApplicationForm.applicationName.$dirty && addEditApplicationForm.applicationName.$invalid">
+                                Role name is required.
+                            </span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button id="btnSubmit" type="submit" class="btn btn-primary" data-ng-click="saveRole()" ng-disabled="editForm.$invalid || !editForm.$dirty">{{buttonText}}</button>
+                        </div>
+                    </div>
+                    <br />
+
+                </div>
+                <br />
+            </form>
+        </div>
+    </section>
+</section>

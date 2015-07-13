@@ -1,0 +1,20 @@
+﻿<p>**initiatives.html**</p>
+
+<div class="wrapper">
+    <div class="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li data-ng-repeat="i in vm.initiatives" ui-sref-active="active">
+                <a ui-sref="initiatives.detail({initiativeId:i.Id})">{{i.Name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="page-content-wrapper">
+        <a ng-click="vm.toggleSidebar()" class="btn btn-sm btn-default" id="menu-toggle">Toggle Menu</a>
+        <h1>CDS Initiatives (Nav Demo)</h1>
+        <p>
+            This section demonstrates an example of routing and navigation using AngularUI router.  Please reference the ReadMe for more information.
+        </p>
+    </div>
+    <!-- The ui-view directive tells $state where to place your templates. -->
+    <div ui-view class="page-content-wrapper"></div>
+</div>

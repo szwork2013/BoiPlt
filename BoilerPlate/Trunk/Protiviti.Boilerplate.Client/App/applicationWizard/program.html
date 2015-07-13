@@ -1,0 +1,74 @@
+﻿<section id="program-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <a href="/Protiviti.Boilerplate.Client/#/applications">Auto Save Example</a>
+            <br />
+            <h3>Filtering and Sorting Example</h3>
+            <form name="filterForm" novalidate>
+                <div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Name Filter:
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="Filter" class="form-control" data-ng-model="nameFilter" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Order By:
+                        </div>
+                        <div class="col-md-6">
+                            <select ng-model="orderBy" ng-options="orderByOption.name for orderByOption in orderByOptions"></select>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </form>
+        </div>
+    </section>
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Programs">
+                                    Programs
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+                            <div class="panel-body" id="Programs-Header">
+                                <table class="table table-condensed table-striped" id="Programs-Results-Table">
+                                    <thead>
+                                        <tr id="Programs-Results-Header">
+                                            <th id="Programs-Results-Header-Name">Name</th>
+                                            <th id="Programs-Results-Header-Code">Code</th>
+                                            <th id="Programs-Results-Header-Cost">Cost</th>
+                                            <th id="Programs-Results-Header-Duration">Duration</th>
+                                            <th id="Programs-Results-Header-Location">Location</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in programs">
+                                            <td id="ProgramName">{{p.Name}}</td>
+                                            <td id="ProgramCode">{{p.Code}}</td>
+                                            <td id="ProgramCost">{{p.Cost | currency}}</td>
+                                            <td id="ProgramDuration">{{p.Duration}}</td>
+                                            <td id="ProgramLocation">{{p.Location}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PerfIt</name>
+    </assembly>
+    <members>
+        <member name="M:PerfIt.Handlers.CounterHandlerBase.OnRequestStarting(System.Net.Http.HttpRequestMessage,PerfIt.PerfItContext)">
+            <summary>
+            called when request arrives in delegating handler
+            </summary>
+            <param name="request"></param>
+            <param name="context"></param> 
+        </member>
+        <member name="M:PerfIt.Handlers.CounterHandlerBase.OnRequestEnding(System.Net.Http.HttpResponseMessage,PerfIt.PerfItContext)">
+            <summary>
+            called as the async continuation on the delegating handler (when response is sent back)
+            </summary>
+            <param name="response"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:PerfIt.Handlers.CounterHandlerBase.BuildCounters(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="newInstanceName"></param>
+        </member>
+        <member name="M:PerfIt.Handlers.CounterHandlerBase.DoGetCreationData">
+            <summary>
+            Handler to return data for creating counters
+            </summary>
+            <param name="filter">Filter attribute defined</param>
+            <returns></returns>
+        </member>
+        <member name="P:PerfIt.Handlers.CounterHandlerBase.CounterType">
+            <summary>
+            type of counter. just a string identifier
+            </summary>
+        </member>
+        <member name="T:PerfIt.PerfitClientDelegatingHandler">
+            <summary>
+            Delegating handler for HttpClient
+            </summary>
+        </member>
+        <member name="P:PerfIt.PerfitClientDelegatingHandler.InstanceNameProvider">
+            <summary>
+            Provides the performance counter instance name.
+            Default impl combines method and the host name of the request.
+            </summary>
+        </member>
+        <member name="P:PerfIt.PerfItFilterAttribute.InstanceName">
+            <summary>
+            Optional name of the counter. 
+            If not specified it will be [controller].[action] for each counter.
+            If it is provided, make sure it is UNIQUE within the project
+            </summary>
+        </member>
+        <member name="P:PerfIt.PerfItFilterAttribute.Description">
+            <summary>
+            Description of the counter. Will be published to counter metadata visible in Perfmon.
+            </summary>
+        </member>
+        <member name="P:PerfIt.PerfItFilterAttribute.Counters">
+            <summary>
+            Counter types. Each value as a string.
+            </summary>
+        </member>
+        <member name="M:PerfIt.PerfItDelegatingHandler.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="categoryName">Name of the grouping category of counters (e.g. Process, Processor, Network Interface are all categories)
+            if not provided, it will use name of the assembly.
+            </param>
+        </member>
+        <member name="M:PerfIt.PerfItRuntime.Uninstall(System.Reflection.Assembly,System.String)">
+            <summary>
+            Uninstalls performance counters in the current assembly using PerfItFilterAttribute.
+            </summary>
+            <param name="categoryName">if you have provided a categoryName for the installation, you must supply the same here</param>
+        </member>
+        <member name="M:PerfIt.PerfItRuntime.Install(System.Reflection.Assembly,System.String)">
+            <summary>
+            Installs performance counters in the current assembly using PerfItFilterAttribute.
+            </summary>
+            
+            <param name="categoryName">category name for the metrics. If not provided, it will use the assembly name</param>
+        </member>
+        <member name="M:PerfIt.PerfItRuntime.InstallStandardCounters(System.String)">
+            <summary>
+             installs 4 standard counters for the category provided
+            </summary>
+            <param name="categoryName"></param>
+        </member>
+        <member name="M:PerfIt.PerfItRuntime.Uninstall(System.String)">
+            <summary>
+             Uninstalls the category provided
+            </summary>
+            <param name="categoryName"></param>
+        </member>
+        <member name="M:PerfIt.PerfItRuntime.FindAllFilters(System.Reflection.Assembly)">
+            <summary>
+            Extracts all filters in the current assembly defined on ApiControllers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PerfIt.PerfItRuntime.HandlerFactories">
+            <summary>
+            Counter handler factories with counter type as the key.
+            Factory's first param is applicationName and second is the filter
+            Use it to register your own counters or replace built-in implementations
+            </summary>
+        </member>
+    </members>
+</doc>

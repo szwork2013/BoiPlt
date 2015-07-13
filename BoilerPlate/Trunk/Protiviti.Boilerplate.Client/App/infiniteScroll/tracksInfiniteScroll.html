@@ -1,0 +1,25 @@
+﻿<section id="tracksinfinitescroll-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <h4 id="Tracks">Tracks</h4>
+            <div infinite-scroll='getTracks()' infinite-scroll-disabled='pagingInfo.busy' infinite-scroll-distance='1'>
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Artist Name</th>
+                            <th>Song Title</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-repeat="a in tracks">
+                            <td>{{a.ArtistName}}</td>
+                            <td>{{a.SongTitle}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div ng-show='pagingInfo.busy'>Loading tracks...</div>
+            </div>
+        </div>
+    </section>
+</section>

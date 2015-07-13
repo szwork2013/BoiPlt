@@ -1,0 +1,84 @@
+﻿<section id="notauthorized-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+
+            <div class="row" data-ng-hide="providers.length>0">
+                <div class="col-md-2">
+                    &nbsp;
+                </div>
+
+                <div class="col-md-10">
+                    <p class="text-success"><h4> Your account is currently not verified. Please contact your site admin to confirm your account.</h4></p>
+                </div>
+
+            </div>
+           
+            <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                <strong> {{message}}</strong>
+            </div>
+            <form name="myForm" role="form" novalidate>
+                <div class="row" data-ng-show="providers.length>0">
+                    <div class="col-md-2">
+                        &nbsp;
+                    </div>
+
+                    <div class="col-md-8">
+                        <h3>Verify your Account</h3>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    Two-Factor Authentication Provider:
+                                    <select id="authentication_provider" ng-model="selectedProvider" ng-options="provider.name for provider in providers">
+                                        <option value="">-- select provider --</option>
+                                    </select>
+                                </div>
+                                <!--<div class="row">
+                            <div class="col-md-4">
+                                &nbsp;
+                            </div>
+                            <br />
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Verification Code" data-ng-model="registerData.userName" required autofocus>
+                                    <button class="btn btn-md btn-primary btn-block" type="button" style="margin-top:10px;" data-ng-click="registerExternal()">Verify Code</button>
+                                </div>
+                                <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                                    {{message}}
+                                </div>
+                            </div>
+                        </div>-->
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-md btn-primary btn-block" type="button" data-ng-click="getCode()">Send Verification Code</button>
+
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Verification Code" data-ng-model="code" required autofocus>
+                                    <button class="btn btn-md btn-primary btn-block" type="button" style="margin-top:10px;" ng-disabled="myForm.$invalid" data-ng-click="verifyCode()">Verify Code</button>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        &nbsp;
+                    </div>
+                </div>
+            </form>
+</div>
+    </section>
+</section>

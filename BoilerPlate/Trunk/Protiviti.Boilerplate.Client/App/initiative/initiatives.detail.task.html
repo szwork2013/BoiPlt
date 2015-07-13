@@ -1,0 +1,67 @@
+﻿<hr>
+<div class="well" style="background: #E1E1E0">
+    <p>**initiatives.details.task.html**</p>
+
+    <form class="form-horizontal" id="initiative_formEdit">
+        <div class="row">
+            <h4>{{task.TaskName}}</h4>
+            <button id="initiative_btnSave" class="btn btn-info" ng-click="vm.save()">
+                <i class="fa fa-save"></i> Save
+            </button>
+        </div>
+        <div class="row">
+            <div class=" form-group col-xs-8">
+                <label for="initiatve_txtTaskName" class="control-label">Task</label>
+                <div class="form-inline input-group fullWidth">
+                    <input id="initiatve_txtTaskName" class="form-control" ng-model="task.TaskName" data-z-validate />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" form-group col-xs-8">
+                <label for="initiative_ddlContact" class="control-label">Contact</label>
+                <div class="form-inline input-group fullWidth">
+                    <select class="form-control" id="initiative_ddlContact" data-ng-options="c.FullName for c in contacts"
+                            data-z-validate
+                            data-ng-model="task.Contact"></select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-8">
+                <label for="initiatve_txtEmail" class="control-label">Email</label>
+                <div class="form-inline input-group fullWidth">
+                    <input id="initiatve_txtEmail" class="form-control" ng-model="task.Contact.Email" data-z-validate />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-8">
+                <label for="initiatve_txtStartDate" class="control-label">Start Date</label>
+                <div class="form-inline input-group fullWidth">
+                    <input id="initiatve_txtStartDate"
+                           kendo-date-picker k-ng-model="task.StartDate" data-z-validate />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-8">
+                <label for="initiatve_txtDescription" class="control-label">Description</label>
+                <div class="form-inline input-group fullWidth">
+                    <input id="initiatve_txtDescription" class="form-control" ng-model="task.Description" data-z-validate />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-8">
+                <label for="initiatve_txtUrl" class="control-label">Url</label>
+                <div class="form-inline input-group fullWidth">
+                    <input id="initiatve_txtUrl" class="form-control" ng-model="task.Url" data-z-validate />
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+

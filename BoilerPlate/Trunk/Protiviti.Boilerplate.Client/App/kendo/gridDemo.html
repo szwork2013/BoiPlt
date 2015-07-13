@@ -1,0 +1,28 @@
+﻿<section id="employee-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <h2>Local Data Grid with Sort and Filter</h2>
+            <div id="PRO_localGridWithSortFilter" kendo-grid k-options="localDataGridWithSortFilterOptions()"></div>
+
+            <h2>Local Editable Data Grid</h2>
+            <div id="PRO_localEditableGrid" kendo-grid k-options="localEditableDataGridOptions()"></div>
+
+            <h2>Remote Data Grid</h2>
+            <div id="PRO_remoteGrid" kendo-grid k-options="remoteDataGridOptions()"></div>
+
+            <h2>Groupable Aggregated Data Grid</h2>
+            <div id="PRO_groupableGrid" kendo-grid k-options="groupableAggregatedDataGridOptions()"></div>
+
+            <!--<div kendo-grid k-options="gridOptions" k-rebind="gridOptions.selectable"
+             k-on-change="handleChange(selected, data, dataItem, columns)"></div>-->
+
+            <form data-ng-submit="uploadFiles()" method="post">
+                <h2 id="PRO_headingUploadGrid">File Upload Grid</h2>
+                <div id="PRO_fileUploadGrid" class="" kendo-grid k-options="fileUploadDataGridOptions()"></div>
+
+                <input id="uploadGrid" type="file" kendo-upload k-select="onSelect" k-async="{autoUpload: false }" k-remove="onRemove" k-localization="{select: 'Select File/s'}" />
+                <input id="uploadFiles" type="submit" value="Upload" name="Upload" />
+            </form>
+        </div>
+    </section>
+</section>

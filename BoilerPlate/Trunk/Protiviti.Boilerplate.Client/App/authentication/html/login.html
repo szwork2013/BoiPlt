@@ -1,0 +1,54 @@
+﻿<section id="logincontroller-view" class="mainbar" data-ng-controller="loginController">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Admin User: admin@protiviti.com</h5>
+                    <h5>Admin Password: Admin@123</h5>
+                </div>
+            </div>
+            <form name="myForm" role="form" novalidate>
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <h2 class="form-login-heading">Login</h2>
+                        <input type="text" id="Email" name="Email" class="form-control" placeholder="Username" data-ng-model="loginData.email" required autofocus>
+                        <br />
+                        <input type="password" id="Password" name="Password" class="form-control" placeholder="Password" data-ng-model="loginData.password" required>
+                        <div class="form-group"></div>
+                        <!--<div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-ng-model="loginData.useRefreshTokens"><strong> Use Refresh Tokens</strong>
+                            </label>
+                        </div>-->
+                        <!--<button class="btn btn-md btn-info btn-block" type="submit" data-ng-click="login()">Login</button>-->
+                        <div class="row">
+                            <div class="col-md-6"><button id="btnLogin" class="btn btn-md btn-primary btn-block" type="submit" data-ng-click="login()" ng-disabled="myForm.$invalid || isUnchanged(user)">Login</button></div>
+                            <div class="col-md-6"><button id="btnReset" class="btn btn-md btn-default btn-block" type="submit" data-ng-click="reset()" ng-disabled="isUnchanged(user)">Reset</button></div>
+                        </div>
+                        <!--<div data-ng-hide="message == ''" class="alert alert-danger">
+                            {{message}}
+                        </div>-->
+
+                        <div class="form-group"><br /><a href="#/registration">Register as a new user</a></div>
+
+
+                    </div>
+                    <div class="col-md-1">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="form-login-heading">Social Logins</h2>
+                        <p>Or you can login using one of the social logins below</p>
+                        <button id="btnFacebookLogin" class="btn btn-large btn-facebook btn-block" type="button" data-ng-click="authExternalProvider('Facebook')"><i class="fa fa-facebook"></i> | Connect with Facebook</button>
+                        <button id="btnGoogleLogin" class="btn btn-large btn-google-plus btn-block" type="button" data-ng-click="authExternalProvider('Google')"><i class="fa fa-google-plus"></i> | Connect with Google+</button>
+                    </div>
+                    <div class="col-md-2">
+                        &nbsp;
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+</section>

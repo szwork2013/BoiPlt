@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgedReviewErrorMessage" xml:space="preserve">
+    <value>The reviewed date is older than allowed.</value>
+  </data>
+  <data name="AgedReviewErrorType" xml:space="preserve">
+    <value>DocAgedReview</value>
+  </data>
+  <data name="AgedReviewResolutionScenario" xml:space="preserve">
+    <value>  @{0} @{1} @{2}
+  Scenario: Page at '{3}' reviewed
+    Given I am a team member
+    When I navigate to the "{3}" page
+    Then the page should be reviewed and the reviewed date should be less than {4} months old</value>
+  </data>
+  <data name="FutureDateErrorMessage" xml:space="preserve">
+    <value>The {0} date is in the future.</value>
+  </data>
+  <data name="FutureDateErrorType" xml:space="preserve">
+    <value>DocFuture{0}Date</value>
+  </data>
+  <data name="ImproperOwnerTagErrorMessage" xml:space="preserve">
+    <value>Could not find a value in the owner tag.  The inner text format should match 'Page Owner: [NAME]'.</value>
+  </data>
+  <data name="ImproperOwnerTagErrorType" xml:space="preserve">
+    <value>DocImproperOwnerTag</value>
+  </data>
+  <data name="ImproperReviewerTagErrorMessage" xml:space="preserve">
+    <value>Could not find a value in the reviewer tag.  The inner text format should match 'Page Reviewer: [NAME]'.</value>
+  </data>
+  <data name="ImproperReviewerTagErrorType" xml:space="preserve">
+    <value>DocImproperReviewerTag</value>
+  </data>
+  <data name="InvalidDateErrorMesssage" xml:space="preserve">
+    <value>The {0} date is not a valid date.</value>
+  </data>
+  <data name="InvalidDateErrorType" xml:space="preserve">
+    <value>DocInvalid{0}Date</value>
+  </data>
+  <data name="InvalidPageLinkResolutionScenario" xml:space="preserve">
+    <value>  @{0} @{1} @{2}
+  Scenario: Valid response from the '{3}' link on the page at '{4}'
+    Given I am a team member
+    When I navigate to the "{4}" page
+    And I click the "{3}" link
+    Then I should get a valid response</value>
+  </data>
+  <data name="InvalidTagErrorMessage" xml:space="preserve">
+    <value>The page does not have a properly formated {0} tag.  Please make sure it conforms to '{1} on [dd/mm/yy] by [NAME]'.</value>
+  </data>
+  <data name="InvalidTagErrorType" xml:space="preserve">
+    <value>DocInvalid{0}Tag</value>
+  </data>
+  <data name="MissingTagErrorMessage" xml:space="preserve">
+    <value>The page does not have an {0} tag.  Please add '&lt;p class="{0}"&gt;{1} on [DATE] by [PERSON]&lt;/p&gt; to the page.  Just copy it into the markdown file and then replace the [DATE] and [PERSON] fields with the actual date and the person that {0} the page.</value>
+  </data>
+  <data name="MissingTagErrorType" xml:space="preserve">
+    <value>DocMissing{0}Tag</value>
+  </data>
+  <data name="MultipleOwnerTagsErrorMessage" xml:space="preserve">
+    <value>There are multiple owner tags.  Please remove all but one.</value>
+  </data>
+  <data name="MultipleOwnerTagsErrorType" xml:space="preserve">
+    <value>DocMultipleOwnerTags</value>
+  </data>
+  <data name="MultipleReviewerTagsErrorMessage" xml:space="preserve">
+    <value>There are multiple reviewer tags.  Please remove all but one.</value>
+  </data>
+  <data name="MultipleReviewerTagsErrorType" xml:space="preserve">
+    <value>DocMultipleReviewerTags</value>
+  </data>
+  <data name="MultipleTagsErrorMessage" xml:space="preserve">
+    <value>There are multiple {0} tags.  Please remove all but one.</value>
+  </data>
+  <data name="MultipleTagsErrorType" xml:space="preserve">
+    <value>DocMultiple{0}Tags</value>
+  </data>
+  <data name="OwnerRegex" xml:space="preserve">
+    <value>Page Owner:(.*)</value>
+  </data>
+  <data name="OwnerTagName" xml:space="preserve">
+    <value>owner</value>
+  </data>
+  <data name="OwnerTagSelector" xml:space="preserve">
+    <value>p.owner</value>
+  </data>
+  <data name="PageStateKeyOwner" xml:space="preserve">
+    <value>OWNER</value>
+  </data>
+  <data name="PageStateKeyReviewedDate" xml:space="preserve">
+    <value>REVIEWED_DATE</value>
+  </data>
+  <data name="PageStateKeyReviewedPerson" xml:space="preserve">
+    <value>REVIEWED_PERSON</value>
+  </data>
+  <data name="PageStateKeyReviewer" xml:space="preserve">
+    <value>REVIEWER</value>
+  </data>
+  <data name="PageStateKeyUpdatedDate" xml:space="preserve">
+    <value>UPDATED_DATE</value>
+  </data>
+  <data name="PageStateKeyUpdatedPerson" xml:space="preserve">
+    <value>UPDATED_PERSON</value>
+  </data>
+  <data name="ReviewedTagName" xml:space="preserve">
+    <value>reviewed</value>
+  </data>
+  <data name="ReviewerRegex" xml:space="preserve">
+    <value>Page Reviewer:(.*)</value>
+  </data>
+  <data name="ReviewerTagName" xml:space="preserve">
+    <value>reviewer</value>
+  </data>
+  <data name="ReviewerTagSelector" xml:space="preserve">
+    <value>p.reviewer</value>
+  </data>
+  <data name="TagMatcher" xml:space="preserve">
+    <value>{0} on ((\d|\d\d)\/(\d|\d\d)\/(\d|\d\d|\d\d\d\d)) by (.+)</value>
+  </data>
+  <data name="TagSelector" xml:space="preserve">
+    <value>p.{0}</value>
+  </data>
+  <data name="UnassignedReviewerName" xml:space="preserve">
+    <value>Unassigned</value>
+  </data>
+  <data name="UnreviewedChangeErrorMessage" xml:space="preserve">
+    <value>The reviewed date is older than the updated date.</value>
+  </data>
+  <data name="UnreviewedChangeErrorType" xml:space="preserve">
+    <value>DocUnreviewedChange</value>
+  </data>
+  <data name="UnreviewedChangeResolutionScenario" xml:space="preserve">
+    <value>  @{0} @{1} @{2}
+  Scenario: Page at '{3}' reviewed
+    Given I am a team member
+    When I navigate to the "{3}" page
+    Then the page should be reviewed and the reviewed date should be after the updated date</value>
+  </data>
+  <data name="UpdatedTagName" xml:space="preserve">
+    <value>updated</value>
+  </data>
+</root>

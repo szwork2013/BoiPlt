@@ -1,0 +1,9 @@
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\bin\Protiviti.Boilerplate.Client.dll.config
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\bin\Protiviti.Boilerplate.Client.dll
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\bin\Protiviti.Boilerplate.Client.pdb
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\bin\nunit.framework.dll
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\bin\TechTalk.SpecFlow.dll
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\bin\nunit.framework.xml
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\obj\Debug\Protiviti.Boilerplate.Client.csprojResolveAssemblyReference.cache
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\obj\Debug\Protiviti.Boilerplate.Client.dll
+C:\CDSRepository\BoilerPlate\Trunk\Protiviti.Boilerplate.Client\obj\Debug\Protiviti.Boilerplate.Client.pdb

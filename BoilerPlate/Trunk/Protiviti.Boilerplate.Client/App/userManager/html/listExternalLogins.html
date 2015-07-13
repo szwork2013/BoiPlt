@@ -1,0 +1,60 @@
+﻿<section id="listusers-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Users">
+                                    External Logins
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+
+                            <div class="panel-body" id="Users-Header">
+                                <form class="form-inline" ng-submit="searchExternalLogins()" role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-sm" ng-model="pagingInfo.nameFilter" placeholder="Search...">
+                                        <button type="submit" class="btn btn-info btn-sm"><strong>Search</strong></button>
+                                    </div>
+                                </form>
+                                <br />
+                                <table class="table table-condensed table-striped" id="Users">
+                                    <thead>
+                                        <tr>
+                                            <th id="Users-Results-Header-Id"><a href="" ng-click="sortUsers('Id')">Id</a></th>
+                                            <th id="Users-Results-Header-UserName"><a href="" ng-click="sortUsers('UserName')">User Name</a></th>
+                                            <th id="Users-Results-Header-Type"><a href="" ng-click="sortUsers('LoginProvider')">Type</a></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in externalLogins">
+                                            <td id="Id">{{p.Id }}</td>
+                                            <td id="UserName">{{p.UserName }}</td>
+                                            <td id="FullName">{{p.Logins[0].LoginProvider }} </td>
+                                            <td>
+                                                <a href="#/users/userId={{p.UserName}}"><i class="fa fa-pencil fa-fw"></i></a>
+                                                <a access="Admin" href="javascript:void(0)" data-ng-click="deleteUser(p.UserName) "><i class="fa fa-trash-o fa-fw"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <a title="Go to the first page" id="First-Page" class="btn btn-info btn-sm" href="" ng-click="selectFirstPage()">First Page</a>
+                                    <a title="Go to the previous page" id="Prev-Page" class="btn btn-info btn-sm" href="" ng-click="selectPreviosPage()">Previous Page</a>
+                                    <span id="pagenumber">&nbspPage: {{pagingInfo.page}}&nbsp&nbsp</span>
+                                    <a title="Go to the next page" id="Next-Page" class="btn btn-info btn-sm" href="" ng-click="selectNextPage()">Next Page</a>
+                                </div>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

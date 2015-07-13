@@ -1,0 +1,56 @@
+﻿<section id="clicktoedit-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <h2>Click To Edit (Form)</h2>
+            <div>
+                <div class="row">
+                    <div class="col-md-1">Email</div>
+                    <div class="col-md-9"><a name="Email" href="#" editable-email="user.email">{{ user.email || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Tel</div>
+                    <div class="col-md-9"><a name="Tel" href="#" editable-tel="user.tel" e-pattern="\d{3}\-\d{2}\-\d{2}" e-title="xxx-xx-xx">{{ user.tel || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Number</div>
+                    <div class="col-md-9"><a name="Number" href="#" editable-number="user.number" e-min="18">{{ user.number || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Range</div>
+                    <div class="col-md-9"><a name="Range" href="#" editable-range="user.range" e-step="5">{{ user.range || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Url</div>
+                    <div class="col-md-9"><a name="URL" href="#" editable-url="user.url">{{ user.url || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Search</div>
+                    <div class="col-md-9"><a name="Search" href="#" editable-search="user.search">{{ user.search || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Color</div>
+                    <div class="col-md-9"><a name="Color" href="#" editable-color="user.color">{{ user.color || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Date</div>
+                    <div class="col-md-9"><a name="Date" href="#" editable-date="user.date">{{ user.date || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Time</div>
+                    <div class="col-md-9"><a name="Time" href="#" editable-time="user.time">{{ user.time || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Datetime</div>
+                    <div class="col-md-9"><a name="DateTime" href="#" editable-datetime="user.datetime">{{ user.datetime || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Month</div>
+                    <div class="col-md-9"><a name="Month" href="#" editable-month="user.month">{{ user.month || 'empty' }}</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">Week</div>
+                    <div class="col-md-9"><a name="Week" href="#" editable-week="user.week">{{ user.week || 'empty' }}</a></div>
+                </div>
+            </div>
+    </section>
+</section>

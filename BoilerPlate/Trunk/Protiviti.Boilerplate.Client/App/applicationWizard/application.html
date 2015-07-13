@@ -1,0 +1,62 @@
+﻿<section id="application-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <h3>Click on the edit link to update application name</h3>
+            <!--<div class="row">
+                <a ui-sref="addEditApplication" class="btn btn-primary navbar-right"><i class="fa fa-plus fa-fw"></i> Add Application</a>
+            </div>-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Applications">
+                                    Applications
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+                            <div class="panel-body" id="Applications-Header">
+                                <table class="table table-condensed table-striped" id="Applications-Results-Table">
+                                    <thead>
+                                        <tr id="Applications-Results-Header">
+                                            <th id="Applications-Results-Header-Name">Name</th>
+                                            <th id="Applications-Results-Header-Status">Status</th>
+                                            <th id="Applications-Results-Header-ProgramName">Program Name</th>
+                                            <th id="Applications-Results-Header-ApplicantName">Applicant Name</th>
+                                            <th id="Applications-Results-Header-ApplicantEmail">Applicant Email</th>
+                                            <th id="Applications-Results-Header-ApplicantCompany">Applicant Company</th>
+                                            <th id="Applications-Results-Header-ApplicantDepartment">Applicant Department</th>
+                                            <th id="Applications-Results-Header-InvoiceAmount">Invoice Amount</th>
+                                            <th id="Applications-Results-Header-PaymentAccountNumber">Payment Account Number</th>
+                                            <th id="Applications-Results-Header-PaymentRoutingNumber">Payment Routing Number</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="a in applications">
+                                            <td>{{a.Name}}</td>
+                                            <td>{{a.Status}}</td>
+                                            <td>{{a.Program.Name}}</td>
+                                            <td>{{a.Applicant.FirstName}} {{a.Applicant.LastName}}</td>
+                                            <td>{{a.Applicant.Email}}</td>
+                                            <td>{{a.Applicant.CompanyName}}</td>
+                                            <td>{{a.Applicant.Department}}</td>
+                                            <td>{{a.Invoice.Amount | currency}}</td>
+                                            <td>{{a.Invoice.Payment.AccountNumber}}</td>
+                                            <td>{{a.Invoice.Payment.RoutingNumber}}</td>
+                                            <td><a href="#/application/applicationId={{a.Id}}"><i class="fa fa-pencil fa-fw"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

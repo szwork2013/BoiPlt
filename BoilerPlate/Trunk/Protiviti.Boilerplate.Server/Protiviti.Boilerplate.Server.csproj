@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D99AB7A5-80D9-4F94-AD3C-568EDE30E955}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Protiviti.Boilerplate.Server</RootNamespace>
+    <AssemblyName>Protiviti.Boilerplate.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.Owin.3.1.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi.Owin, Version=3.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.WebApi2.Owin.3.2.0\lib\net45\Autofac.Integration.WebApi.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.ContextProvider, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Breeze.Server.ContextProvider.1.5.1\lib\Breeze.ContextProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.ContextProvider.EF6, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Breeze.Server.ContextProvider.EF6.1.5.1\lib\Breeze.ContextProvider.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.WebApi2, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Breeze.Server.WebApi2.1.5.1\lib\Breeze.WebApi2.dll</HintPath>
+    </Reference>
+    <Reference Include="EFCache">
+      <HintPath>..\packages\EntityFramework.Cache.1.0.0\lib\net45\EFCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.3\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.3\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.3\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.1\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Diagnostics.3.0.0\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.ActiveDirectory">
+      <HintPath>..\packages\Microsoft.Owin.Security.ActiveDirectory.3.0.0\lib\net45\Microsoft.Owin.Security.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.0\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect">
+      <HintPath>..\packages\Microsoft.Owin.Security.OpenIdConnect.3.0.0\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.SemanticLogging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.SemanticLogging.2.0.1406.1\lib\net45\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.SemanticLogging.Database.2.0.1406.1\lib\net45\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile">
+      <HintPath>..\packages\EnterpriseLibrary.SemanticLogging.TextFile.2.0.1406.1\lib\net45\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.WindowsAzure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.SemanticLogging.WindowsAzure.2.0.1406.1\lib\net45\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.WindowsAzure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PerfIt">
+      <HintPath>..\packages\PerfIt.0.7.0\lib\net40\PerfIt.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Swashbuckle.Core.4.1.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.1\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.3\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Cors, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.2\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.2\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.3.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.5.2.2\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel.Core">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.2.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio.Api, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Twilio.3.6.24\lib\3.5\Twilio.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi">
+      <HintPath>..\packages\Unity.WebAPI.5.1\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Account\AccountController.cs" />
+    <Compile Include="Api\Account\DataAccess\ApplicationDbInitializer.cs" />
+    <Compile Include="Api\Account\DataAccess\IdentityContext.cs" />
+    <Compile Include="Api\Account\Entity\Client.cs" />
+    <Compile Include="Api\Account\Entity\Enums.cs" />
+    <Compile Include="Api\Account\Entity\ExternalLoginModels.cs" />
+    <Compile Include="Api\Account\Helper.cs" />
+    <Compile Include="Api\Account\UserManagerController.cs" />
+    <Compile Include="Api\Account\RoleManagerController.cs" />
+    <Compile Include="Api\Account\Entity\AccountBindingModels.cs" />
+    <Compile Include="Api\Account\Entity\AccountViewModels.cs" />
+    <Compile Include="Api\Account\Entity\IdentityModels.cs" />
+    <Compile Include="Api\Account\IdentityConstants.cs" />
+    <Compile Include="Api\Album\AlbumController.cs" />
+    <Compile Include="Api\Album\DataAccess\AlbumContext.cs" />
+    <Compile Include="Api\ApplicationWizard\ApplicationsController.cs" />
+    <Compile Include="Api\ApplicationWizard\ApplicationWizardController.cs" />
+    <Compile Include="Api\ApplicationWizard\DataAccess\ApplicantConfiguration.cs" />
+    <Compile Include="Api\ApplicationWizard\DataAccess\ApplicationConfiguration.cs" />
+    <Compile Include="Api\ApplicationWizard\DataAccess\ApplicationWizardContext.cs" />
+    <Compile Include="Api\ApplicationWizard\DataAccess\InvoiceConfiguration.cs" />
+    <Compile Include="Api\ApplicationWizard\DataAccess\PaymentConfiguration.cs" />
+    <Compile Include="Api\ApplicationWizard\DataAccess\ProgramConfiguration.cs" />
+    <Compile Include="Api\ApplicationWizard\Entity\Applicant.cs" />
+    <Compile Include="Api\ApplicationWizard\Entity\Application.cs" />
+    <Compile Include="Api\ApplicationWizard\Entity\Invoice.cs" />
+    <Compile Include="Api\ApplicationWizard\Entity\Payment.cs" />
+    <Compile Include="Api\ApplicationWizard\Entity\Program.cs" />
+    <Compile Include="Api\ApplicationWizard\ProgramsController.cs" />
+    <Compile Include="App_Start\BreezeWebApiConfig.cs" />
+    <Compile Include="AuthorizationServer\Formats\CustomJwtFormat.cs" />
+    <Compile Include="Configuration\CacheConfiguration.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Api\FileUpload\DataAccess\FileConfiguration.cs" />
+    <Compile Include="Api\FileUpload\DataAccess\FileUploadDbContext.cs" />
+    <Compile Include="Api\FileUpload\Entity\File.cs" />
+    <Compile Include="Api\FileUpload\FileController.cs" />
+    <Compile Include="Api\Helper\ServerSettings.cs" />
+    <Compile Include="Api\Registration\DataAccess\AddressConfiguration.cs" />
+    <Compile Include="Api\Registration\DataAccess\ContactConfiguration.cs" />
+    <Compile Include="Api\Registration\DataAccess\PersonConfiguration.cs" />
+    <Compile Include="Api\Registration\DataAccess\RegistrationDbContext.cs" />
+    <Compile Include="Api\Registration\Entity\Address.cs" />
+    <Compile Include="Api\Registration\Entity\Contact.cs" />
+    <Compile Include="Api\Registration\Entity\Person.cs" />
+    <Compile Include="Api\Registration\RegistrationController.cs" />
+    <Compile Include="Api\Initiatives\DataAccess\CdsInitiativeDbInitializer.cs" />
+    <Compile Include="Api\Initiatives\CdsInitiativesController.cs" />
+    <Compile Include="Api\Initiatives\DataAccess\Initializer.cs" />
+    <Compile Include="Api\Initiatives\Entity\Initiative.cs" />
+    <Compile Include="Api\Initiatives\DataAccess\InitiativeConfiguration.cs" />
+    <Compile Include="Api\Initiatives\DataAccess\InitiativeDbContext.cs" />
+    <Compile Include="Api\Initiatives\Entity\InitiativeTask.cs" />
+    <Compile Include="Api\Initiatives\DataAccess\InitiativeTaskConfiguration.cs" />
+    <Compile Include="Api\Person\Person.cs" />
+    <Compile Include="Api\Search\DataAccess\FullTextSearch.cs" />
+    <Compile Include="Api\Search\DataAccess\IndexBuilder.cs" />
+    <Compile Include="Api\Search\DataAccess\SearchInitializer.cs" />
+    <Compile Include="Api\Search\Entity\SearchResult.cs" />
+    <Compile Include="Api\Search\SearchController.cs" />
+    <Compile Include="Api\Album\Entity\Track.cs" />
+    <Compile Include="App_Start\SignInHelper.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Filters\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Api\Employee\DataAccess\DesignationConfiguration.cs" />
+    <Compile Include="Api\Employee\DataAccess\DivisionConfiguration.cs" />
+    <Compile Include="Api\Employee\DataAccess\EmployeeConfiguration.cs" />
+    <Compile Include="Api\Employee\DefaultController.cs" />
+    <Compile Include="Api\Employee\DataAccess\EmployeeBreezeContext.cs" />
+    <Compile Include="Api\Employee\DataAccess\EmployeeContextConfiguration.cs" />
+    <Compile Include="Api\Employee\DataAccess\EmployeeContext.cs" />
+    <Compile Include="Api\Employee\DataAccess\Initializer.cs" />
+    <Compile Include="Api\Employee\Entity\Designation.cs" />
+    <Compile Include="Api\Employee\Entity\Division.cs" />
+    <Compile Include="Api\Employee\Entity\Employee.cs" />
+    <Compile Include="ExceptionHandling\ApiExceptionHandler.cs" />
+    <Compile Include="ExceptionHandling\ElmahExceptionLogger.cs" />
+    <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Filters\NoCacheAttribute.cs" />
+    <Compile Include="Ioc\Bootstrapper.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Api\Employee\BaseController.cs" />
+    <Compile Include="Api\Employee\EmployeeController.cs" />
+    <Compile Include="Logging\EFDatabaseLogging.cs" />
+    <Compile Include="Logging\EFDbInterceptorLogging.cs" />
+    <Compile Include="Logging\EFLogging.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\SlabLoggingExceptionLogger.cs" />
+    <Compile Include="Logging\SlabLoggingFilterAttribute.cs" />
+    <Compile Include="Logging\SlabTraceWriter.cs" />
+    <Compile Include="Logging\WebApiTracing.cs" />
+    <Compile Include="Migrations\201409082105066_Initial.cs" />
+    <Compile Include="Migrations\201409082105066_Initial.designer.cs">
+      <DependentUpon>201409082105066_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AlbumContext\201411101909418_Initial.cs" />
+    <Compile Include="Migrations\AlbumContext\201411101909418_Initial.Designer.cs">
+      <DependentUpon>201411101909418_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AlbumContext\201506041616511_AddedSongLength.cs" />
+    <Compile Include="Migrations\AlbumContext\201506041616511_AddedSongLength.Designer.cs">
+      <DependentUpon>201506041616511_AddedSongLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AlbumContext\201506041846428_AddedSongAuthor.cs" />
+    <Compile Include="Migrations\AlbumContext\201506041846428_AddedSongAuthor.Designer.cs">
+      <DependentUpon>201506041846428_AddedSongAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AlbumContext\Configuration.cs" />
+    <Compile Include="Migrations\ApplicationWizardContext\201409171820082_Initial.cs" />
+    <Compile Include="Migrations\ApplicationWizardContext\201409171820082_Initial.designer.cs">
+      <DependentUpon>201409171820082_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationWizardContext\201409251609165_NewProgramsProperty.cs" />
+    <Compile Include="Migrations\ApplicationWizardContext\201409251609165_NewProgramsProperty.designer.cs">
+      <DependentUpon>201409251609165_NewProgramsProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationWizardContext\201409251745195_NewInvoiceApplicantApplicationProperties.cs" />
+    <Compile Include="Migrations\ApplicationWizardContext\201409251745195_NewInvoiceApplicantApplicationProperties.designer.cs">
+      <DependentUpon>201409251745195_NewInvoiceApplicantApplicationProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationWizardContext\201409302036415_UpdatedApplication.cs" />
+    <Compile Include="Migrations\ApplicationWizardContext\201409302036415_UpdatedApplication.designer.cs">
+      <DependentUpon>201409302036415_UpdatedApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationWizardContext\201506041615346_Initial1.cs" />
+    <Compile Include="Migrations\ApplicationWizardContext\201506041615346_Initial1.Designer.cs">
+      <DependentUpon>201506041615346_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationWizardContext\Configuration.cs" />
+    <Compile Include="Migrations\CdsInitiativesContext\201410101601047_Initial.cs" />
+    <Compile Include="Migrations\CdsInitiativesContext\201410101601047_Initial.designer.cs">
+      <DependentUpon>201410101601047_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\CdsInitiativesContext\201410171355583_InitiativeTaskAddDateColumns.cs" />
+    <Compile Include="Migrations\CdsInitiativesContext\201410171355583_InitiativeTaskAddDateColumns.designer.cs">
+      <DependentUpon>201410171355583_InitiativeTaskAddDateColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\CdsInitiativesContext\Configuration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\DatabaseInitializer.cs" />
+    <Compile Include="Migrations\EmployeeContext\201411021025252_Initial.cs" />
+    <Compile Include="Migrations\EmployeeContext\201411021025252_Initial.Designer.cs">
+      <DependentUpon>201411021025252_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\EmployeeContext\Configuration.cs" />
+    <Compile Include="Migrations\FileUploadContext\201410161004288_Initialize.cs" />
+    <Compile Include="Migrations\FileUploadContext\201410161004288_Initialize.designer.cs">
+      <DependentUpon>201410161004288_Initialize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\FileUploadContext\201412051135598_AddedDataURLToFile.cs" />
+    <Compile Include="Migrations\FileUploadContext\201412051135598_AddedDataURLToFile.Designer.cs">
+      <DependentUpon>201412051135598_AddedDataURLToFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\FileUploadContext\201412081101283_RemoveImageColumn.cs" />
+    <Compile Include="Migrations\FileUploadContext\201412081101283_RemoveImageColumn.Designer.cs">
+      <DependentUpon>201412081101283_RemoveImageColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\FileUploadContext\201412091202168_AddedFileImageAndTypeColumns.cs" />
+    <Compile Include="Migrations\FileUploadContext\201412091202168_AddedFileImageAndTypeColumns.Designer.cs">
+      <DependentUpon>201412091202168_AddedFileImageAndTypeColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\FileUploadContext\201412101216350_RenamedColumnToFileType.cs" />
+    <Compile Include="Migrations\FileUploadContext\201412101216350_RenamedColumnToFileType.Designer.cs">
+      <DependentUpon>201412101216350_RenamedColumnToFileType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\FileUploadContext\201412110558157_RenamedColumnsFirefoxIssue.cs" />
+    <Compile Include="Migrations\FileUploadContext\201412110558157_RenamedColumnsFirefoxIssue.Designer.cs">
+      <DependentUpon>201412110558157_RenamedColumnsFirefoxIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\FileUploadContext\Configuration.cs" />
+    <Compile Include="Migrations\IdentityContext\201410091457401_Intial.cs" />
+    <Compile Include="Migrations\IdentityContext\201410091457401_Intial.designer.cs">
+      <DependentUpon>201410091457401_Intial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityContext\201411070605181_Add_ApplicationUser_IsActive_Column.cs" />
+    <Compile Include="Migrations\IdentityContext\201411070605181_Add_ApplicationUser_IsActive_Column.Designer.cs">
+      <DependentUpon>201411070605181_Add_ApplicationUser_IsActive_Column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityContext\201411070843048_Add_Table_Clients.cs" />
+    <Compile Include="Migrations\IdentityContext\201411070843048_Add_Table_Clients.Designer.cs">
+      <DependentUpon>201411070843048_Add_Table_Clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityContext\Configuration.cs" />
+    <Compile Include="Migrations\RegistrationContext\201410131816489_Initial.cs" />
+    <Compile Include="Migrations\RegistrationContext\201410131816489_Initial.designer.cs">
+      <DependentUpon>201410131816489_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\RegistrationContext\201410161603499_UpdateRegistrationTables.cs" />
+    <Compile Include="Migrations\RegistrationContext\201410161603499_UpdateRegistrationTables.designer.cs">
+      <DependentUpon>201410161603499_UpdateRegistrationTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\RegistrationContext\201410161754500_UpdateDateTimeColumnsOnRegistrationTables.cs" />
+    <Compile Include="Migrations\RegistrationContext\201410161754500_UpdateDateTimeColumnsOnRegistrationTables.designer.cs">
+      <DependentUpon>201410161754500_UpdateDateTimeColumnsOnRegistrationTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\RegistrationContext\201501060847326_FieldsSetAsMaxLength.cs" />
+    <Compile Include="Migrations\RegistrationContext\201501060847326_FieldsSetAsMaxLength.Designer.cs">
+      <DependentUpon>201501060847326_FieldsSetAsMaxLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\RegistrationContext\201501130546574_SetMaxColLengthForContacts.cs" />
+    <Compile Include="Migrations\RegistrationContext\201501130546574_SetMaxColLengthForContacts.Designer.cs">
+      <DependentUpon>201501130546574_SetMaxColLengthForContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\RegistrationContext\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Api\Employee\DataAccess\EmployeeRepository.cs" />
+    <Compile Include="AuthorizationServer\Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="AuthorizationServer\Providers\FacebookAuthProvider.cs" />
+    <Compile Include="AuthorizationServer\Providers\GoogleAuthProvider.cs" />
+    <Compile Include="Results\BadRequestCustomApiResult.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Results\InternalServerErrorResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="Properties\PublishProfiles\api1-protiviti.azurewebsites.net.PublishSettings" />
+    <None Include="Properties\PublishProfiles\api1-protiviti - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\api1-protiviti - Web Deploy.pubxml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\External\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <Project>{F68A1D19-93FB-47C1-A22B-42BEA3E4FD8C}</Project>
+      <Name>Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\Repository.Pattern\Repository.Pattern.csproj">
+      <Project>{6E682A14-C872-4813-B620-76E108DEA683}</Project>
+      <Name>Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\Service.Pattern\Service.Pattern.csproj">
+      <Project>{86F86650-EE3C-4372-8FEC-40C2FE015022}</Project>
+      <Name>Service.Pattern</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201409082105066_Initial.resx">
+      <DependentUpon>201409082105066_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\AlbumContext\201411101909418_Initial.resx">
+      <DependentUpon>201411101909418_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\AlbumContext\201506041616511_AddedSongLength.resx">
+      <DependentUpon>201506041616511_AddedSongLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\AlbumContext\201506041846428_AddedSongAuthor.resx">
+      <DependentUpon>201506041846428_AddedSongAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationWizardContext\201409171820082_Initial.resx">
+      <DependentUpon>201409171820082_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationWizardContext\201409251609165_NewProgramsProperty.resx">
+      <DependentUpon>201409251609165_NewProgramsProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationWizardContext\201409251745195_NewInvoiceApplicantApplicationProperties.resx">
+      <DependentUpon>201409251745195_NewInvoiceApplicantApplicationProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationWizardContext\201409302036415_UpdatedApplication.resx">
+      <DependentUpon>201409302036415_UpdatedApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationWizardContext\201506041615346_Initial1.resx">
+      <DependentUpon>201506041615346_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\CdsInitiativesContext\201410101601047_Initial.resx">
+      <DependentUpon>201410101601047_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\CdsInitiativesContext\201410171355583_InitiativeTaskAddDateColumns.resx">
+      <DependentUpon>201410171355583_InitiativeTaskAddDateColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\EmployeeContext\201411021025252_Initial.resx">
+      <DependentUpon>201411021025252_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\FileUploadContext\201410161004288_Initialize.resx">
+      <DependentUpon>201410161004288_Initialize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\FileUploadContext\201412051135598_AddedDataURLToFile.resx">
+      <DependentUpon>201412051135598_AddedDataURLToFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\FileUploadContext\201412081101283_RemoveImageColumn.resx">
+      <DependentUpon>201412081101283_RemoveImageColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\FileUploadContext\201412091202168_AddedFileImageAndTypeColumns.resx">
+      <DependentUpon>201412091202168_AddedFileImageAndTypeColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\FileUploadContext\201412101216350_RenamedColumnToFileType.resx">
+      <DependentUpon>201412101216350_RenamedColumnToFileType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\FileUploadContext\201412110558157_RenamedColumnsFirefoxIssue.resx">
+      <DependentUpon>201412110558157_RenamedColumnsFirefoxIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityContext\201410091457401_Intial.resx">
+      <DependentUpon>201410091457401_Intial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityContext\201411070605181_Add_ApplicationUser_IsActive_Column.resx">
+      <DependentUpon>201411070605181_Add_ApplicationUser_IsActive_Column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityContext\201411070843048_Add_Table_Clients.resx">
+      <DependentUpon>201411070843048_Add_Table_Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\RegistrationContext\201410131816489_Initial.resx">
+      <DependentUpon>201410131816489_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\RegistrationContext\201410161603499_UpdateRegistrationTables.resx">
+      <DependentUpon>201410161603499_UpdateRegistrationTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\RegistrationContext\201410161754500_UpdateDateTimeColumnsOnRegistrationTables.resx">
+      <DependentUpon>201410161754500_UpdateDateTimeColumnsOnRegistrationTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\RegistrationContext\201501060847326_FieldsSetAsMaxLength.resx">
+      <DependentUpon>201501060847326_FieldsSetAsMaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\RegistrationContext\201501130546574_SetMaxColLengthForContacts.resx">
+      <DependentUpon>201501130546574_SetMaxColLengthForContacts.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VISIBLEBROWSER|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>28589</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Protiviti.Boilerplate.Server</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/Protiviti.Boilerplate.Server</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

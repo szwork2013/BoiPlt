@@ -1,0 +1,2041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{190F5BD9-F549-4DE1-B576-46E2DCCC6CF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Protiviti.Boilerplate.Test</RootNamespace>
+    <AssemblyName>Protiviti.Boilerplate.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>a078e684</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;VISIBLEBROWSER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VISIBLEBROWSER|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VISIBLEBROWSER\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;VISIBLEBROWSER</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coypu">
+      <HintPath>..\packages\Coypu.2.5.1\lib\net40\Coypu.dll</HintPath>
+    </Reference>
+    <Reference Include="Coypu.NUnit">
+      <HintPath>..\packages\Coypu.NUnit.1.0.1\lib\net40\Coypu.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=3.2.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=3.2.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentAssertions.3.2.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAutomation.Core">
+      <HintPath>..\packages\FluentAutomation.Core.3.0.0.0\lib\net40\FluentAutomation.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAutomation.SeleniumWebDriver">
+      <HintPath>..\packages\FluentAutomation.SeleniumWebDriver.3.0.0.0\lib\net40\FluentAutomation.SeleniumWebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScrapySharp.2.2.63\lib\net40\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="ScrapySharp, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ScrapySharp.2.2.63\lib\net40\ScrapySharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ScrapySharp.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ScrapySharp.2.2.63\lib\net40\ScrapySharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Shouldly">
+      <HintPath>..\packages\Shouldly.2.2.0\lib\net40\Shouldly.dll</HintPath>
+    </Reference>
+    <Reference Include="SizSelCsZzz">
+      <HintPath>..\packages\SizSelCsZzz.0.3.36.0\lib\SizSelCsZzz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=2.44.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.WebDriver.2.44.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.43.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.Support.2.43.1\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ChangePasswordSteps.cs" />
+    <Compile Include="Features\Architecture\API\Authentication\AuthenticateViaOAuthResourceOwnerPasswordCredentials.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenticateViaOAuthResourceOwnerPasswordCredentials.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authentication\AutenticateViaFormsAuthentication.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutenticateViaFormsAuthentication.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithMultipleForeignKeys.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithMultipleForeignKeys.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\InjectDatabaseContextToController.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InjectDatabaseContextToController.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\PageObjectTutorial.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PageObjectTutorial.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\DocumentSupportMethodsInstructions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentSupportMethodsInstructions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Test\ReviewPerformanceTestingResearchDoc.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewPerformanceTestingResearchDoc.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Test\TestDriverHelperFramework.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDriverHelperFramework.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Analytics\Angularytics.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Angularytics.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authentication\LoginAuthenticationViaExternalSource.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginAuthenticationViaExternalSource.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authentication\LoginAuthenticationViaOAuth1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginAuthenticationViaOAuth.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authorization\EmployeesSection.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeesSection.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authorization\LoginAuthorizationViaOAuth.feature.cs">
+      <DependentUpon>LoginAuthorizationViaOAuth.feature</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authorization\Roles.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Roles.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authorization\Users.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Users.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\AutoComplete\GeoDataAutoComplete.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoDataAutoComplete.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\DataValidation\DataFieldValidaiton.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataFieldValidaiton.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Navigation\DocumentAngularJSRoutingConcepts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentAngularJSRoutingConcepts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Navigation\MainNavigation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainNavigation.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Navigation\ShoppingCart.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoppingCart.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Registration\UserVerification.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserVerification.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Search\FullTextSearch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FullTextSearch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListWithExpandedEntitiesUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListWithExpandedEntitiesUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\ClickToEdit.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClickToEdit.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\File Upload\AngularFileUpload.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AngularFileUpload.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\DataGrid.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataGrid.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\DataGridOptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataGridOptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\FileUpload.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileUpload.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\ServerQuery.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServerQuery.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UserProfile\ChangePassword.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePassword.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UserProfile\EditProfile.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditProfile.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\DriverHelper.cs" />
+    <Compile Include="Pages\AngularFileUploadPage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\RolePage.cs" />
+    <Compile Include="Pages\Set.cs" />
+    <Compile Include="Pages\UserProfilePage.cs" />
+    <Compile Include="Pages\UsersPage.cs" />
+    <Compile Include="Pages\UserVerification.cs" />
+    <Compile Include="Steps\AngularFileUploadSteps.cs" />
+    <Compile Include="Steps\AngularyticsSteps.cs" />
+    <Compile Include="Steps\DashboardSteps.cs" />
+    <Compile Include="Steps\EditProfileSteps.cs" />
+    <Compile Include="Steps\EmployeesSectionSteps.cs" />
+    <Compile Include="Steps\GeoDataAutoCompleteSteps.cs" />
+    <Compile Include="Steps\LoginAuthenticationViaExternalSourceSteps.cs" />
+    <Compile Include="Steps\RolesSteps.cs" />
+    <Compile Include="Steps\CDSInitiativeTaskDetailsFieldValidationSteps.cs" />
+    <Compile Include="Steps\ClickToEditSteps.cs" />
+    <Compile Include="Steps\FileUploadSteps.cs" />
+    <Compile Include="Pages\ApplicationsPage.cs" />
+    <Compile Include="Pages\DashboardPage.cs" />
+    <Compile Include="Pages\DataGridPage.cs" />
+    <Compile Include="Pages\ExamplesPage.cs" />
+    <Compile Include="Pages\PageBase.cs" />
+    <Compile Include="Pages\ProgramsPage.cs" />
+    <Compile Include="Pages\RegistrationPage.cs" />
+    <Compile Include="Steps\Authentication\OAuthResourceOwnerPasswordCredentialsGrantSteps.cs" />
+    <Compile Include="Steps\DataGridSteps.cs" />
+    <Compile Include="Steps\FullTextSearchSteps.cs" />
+    <Compile Include="Steps\InjectDatabaseContextToControllerSteps.cs" />
+    <Compile Include="Steps\LoginFunctionalitySteps.cs" />
+    <Compile Include="Steps\NestedNavigationWithUiNavigatetoCDSIntUrlCheck.cs" />
+    <Compile Include="Steps\NestedNavigationWithUITaskTextCheck.cs" />
+    <Compile Include="Steps\ServerQuerySteps.cs" />
+    <Compile Include="Steps\ResearchAutomationTestingTopicsSteps.cs" />
+    <Compile Include="Steps\ShoppingCartSteps.cs" />
+    <Compile Include="Steps\DefineEntityWithChangeTrackingPropertiesSteps.cs" />
+    <Compile Include="Steps\DefineEntityWithForeignKeySteps.cs" />
+    <Compile Include="Steps\DefineEntityWithDecimalPropertySteps.cs" />
+    <Compile Include="Steps\DefineEntityWithMultipleForeignKeysSteps.cs" />
+    <Compile Include="Steps\DefineEntityWithPrimaryKeySteps.cs" />
+    <Compile Include="Steps\DefineEntityWithStringPropertySteps.cs" />
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithDateProperty.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithDateProperty.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithDecimalProperty.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithDecimalProperty.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithIntegerProperty.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithIntegerProperty.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithStringProperty.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithStringProperty.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\SettingUpSolutionDocumentation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingUpSolutionDocumentation.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\QualityAssurance\PerformanceTesting\ResearchPerformanceTesting.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResearchPerformanceTesting.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Registration\Registration.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\HttpsCommunication.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HttpsCommunication.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Navigation\Dashboard.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GridDemoPage.cs" />
+    <Compile Include="Steps\ClientSidePaginationSteps.cs" />
+    <Compile Include="Steps\DefineEntityWithDatePropertySteps.cs" />
+    <Compile Include="Steps\DefineEntityWithIntegerPropertySteps.cs" />
+    <Compile Include="Steps\DocumentGenerateEntityMigrationMultipleDatabaseContextsSteps.cs" />
+    <Compile Include="Features\Architecture\API\Authentication\AspNetSqlAuthentication.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AspNetSqlAuthentication.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Caching\ReviewCachingArchitecture.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewCachingArchitecture.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\ReviewDataAccessArchitecture.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewDataAccessArchitecture.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ReviewDataValidationArchiecture.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewDataValidationArchiecture.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithChangeTrackingProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithChangeTrackingProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithForeignKey.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithForeignKey.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\DefineEntityWithPrimaryKey.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineEntityWithPrimaryKey.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\ModifyEntityAddForeignKey.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModifyEntityAddForeignKey.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\ModifyEntityChangePropertyType.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModifyEntityChangePropertyType.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\EntityModeling\ReviewEntityModelingArchiecture.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewEntityModelingArchiecture.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ServiceModeling\AccessBreezeControllerMultipleEntityFrameworkContext.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessBreezeControllerMultipleEntityFrameworkContext.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ServiceModeling\AccessBreezeControllerSingleEntityFrameworkContext.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessBreezeControllerSingleEntityFrameworkContext.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\MainNavigationSteps.cs" />
+    <Compile Include="Steps\ModifyEntityChangePropertyTypeSteps.cs" />
+    <Compile Include="Steps\NestedNavigationWithUi_RouterStepsSimpleSales1.cs" />
+    <Compile Include="Steps\RegistrationSteps.cs" />
+    <Compile Include="Steps\SearchEntityListFilterSortSelectPropertiesUIServiceSteps.cs" />
+    <Compile Include="Steps\AccessBreezeControllerSingleEntityFrameworkContextSteps.cs" />
+    <Compile Include="Features\Architecture\API\ServiceModeling\RetrieveEntityQuery.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveEntityQuery.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ServiceModeling\RetrieveJSONData.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveJSONData.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ServiceModeling\RetrieveMetaData.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveMetaData.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ServiceModeling\RetrieveOData.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveOData.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ServiceModeling\SaveBatchChanges.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveBatchChanges.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ServiceModeling\SaveSingleChange.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaveSingleChange.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\DocumentGenerateEntityMigrationMultipleDatabaseContexts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentGenerateEntityMigrationMultipleDatabaseContexts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\DocumentGroupEntitiesByDatabaseSchema.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentGroupEntitiesByDatabaseSchema.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\ValidateDocumentation.feature.cs">
+      <DependentUpon>ValidateDocumentation.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\Architecture\Docs\ReviewDocumentationArchitecture.feature.cs">
+      <DependentUpon>ReviewDocumentationArchitecture.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\Architecture\Test\ReviewTestArchitecture.feature.cs">
+      <DependentUpon>ReviewTestArchitecture.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authentication\AuthenticateViaCookies.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenticateViaCookies.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authentication\AuthenticateViaTokens.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenticateViaTokens.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Authentication\ReviewUIAuthenticationArchitectureOverview.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewUIAuthenticationArchitectureOverview.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Caching\CacheEntityListOnClient.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CacheEntityListOnClient.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Caching\CacheEntityListOnServer.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CacheEntityListOnServer.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Caching\InvalidateCache.feature.cs">
+      <DependentUpon>InvalidateCache.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Caching\RetrieveClientCacheVersion.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveClientCacheVersion.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Caching\DumpClientCache.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DumpClientCache.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Caching\DumpServerCache.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DumpServerCache.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Caching\InvalidateServerCache.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvalidateServerCache.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Caching\RetrieveServerCacheVersion.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveServerCacheVersion.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\CreateAnEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateAnEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\CreateAnEntityWithOnlyRequiredProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateAnEntityWithOnlyRequiredProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\CreateAnEntityWithoutAllRequiredProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateAnEntityWithoutAllRequiredProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\CreateAnIncompleteEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateAnIncompleteEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\DeleteAnActiveEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteAnActiveEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\DeleteAnEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteAnEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\DeleteAnInactiveEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteAnInactiveEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\DeleteANonExistentEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteANonExistentEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\RetrieveAInactiveEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveAInactiveEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\RetrieveAllEntitiesSingleType.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveAllEntitiesSingleType.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\RetrieveAnActiveEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveAnActiveEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\RetrieveAnEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveAnEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\RetrieveANonExistentEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveANonExistentEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityList.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityList.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityListFilter.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilter.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityListGroup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListGroup.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityListFilterGroupSelectProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilterGroupSelectProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityListFilterSelectProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilterSelectProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityListSort.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListSort.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityListFilterSortSelectProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilterSortSelectProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\SearchEntityListSelectProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListSelectProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateActivateAnEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateActivateAnEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateActivateANonExistentEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateActivateANonExistentEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateAnEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateAnEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateAnEntitySystemProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateAnEntitySystemProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateAnInactiveEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateAnInactiveEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateANonExistentEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateANonExistentEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateInactivateAlreadyInactiveEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateInactivateAlreadyInactiveEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateInactivateAnEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateInactivateAnEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataAccess\UpdateInactivateANonExistentEntity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateInactivateANonExistentEntity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateCountryList.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateCountryList.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateCurrencyNumberGreaterOrEqualZero.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateCurrencyNumberGreaterOrEqualZero.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateDate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateDate.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateEmailAddress.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateEmailAddress.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateNegativeNumber.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateNegativeNumber.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateNumber.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateNumber.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidatePhoneNumber.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidatePhoneNumber.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidatePositiveNumber.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidatePositiveNumber.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateUSStateList.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateUSStateList.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\DataValidation\ValidateWebsiteAddress.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateWebsiteAddress.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\LogLargeApiResponsePayloads.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogLargeApiResponsePayloads.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ReviewApiArchitecture.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewApiArchitecture.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ReviewApiProjectStructure.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewApiProjectStructure.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authentication\ReviewApiAuthenticationArchitectureOverview.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewApiAuthenticationArchitectureOverview.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authentication\AuthenticateViaClaimsBasedSecurity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenticateViaClaimsBasedSecurity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authentication\AuthenticateViaCustomSecurity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenticateViaCustomSecurity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authentication\AuthenticateViaOAuthSecurity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenticateViaOAuthSecurity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authentication\AuthenicateViaWindowsSecurity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthenicateViaWindowsSecurity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authorization\ReviewApiAuthorizationArchitecture.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewApiAuthorizationArchitecture.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authorization\AuthorizeViaClaims.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorizeViaClaims.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authorization\AuthorizeViaContent.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorizeViaContent.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Authorization\AuthorizeViaRoles.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorizeViaRoles.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\RequireApiHttpsCommunication.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequireApiHttpsCommunication.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ExceptionHandling\HandleConcurrencyExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandleConcurrencyExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ExceptionHandling\HandleCustomExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandleCustomExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ExceptionHandling\HandleDatabaseConnectivityExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandleDatabaseConnectivityExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ExceptionHandling\HandleDatabaseConstraintExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandleDatabaseConstraintExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ExceptionHandling\HandleDatabaseTimeoutExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandleDatabaseTimeoutExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ExceptionHandling\HandleInvalidRequestParameterExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandleInvalidRequestParameterExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\ExceptionHandling\HandleMissingRecordExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandleMissingRecordExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Logging\LogApiCalls.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogApiCalls.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Logging\LogCustomMessages.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogCustomMessages.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Logging\LogExceptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogExceptions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Logging\LogDatabaseCalls.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogDatabaseCalls.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Logging\LogUIActions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogUIActions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Logging\ReviewLoggingArchitecture.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewLoggingArchitecture.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\Logging\ViewLogs.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewLogs.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\LogLargeDatabaseResponsePayloads.feature.cs">
+      <DependentUpon>LogLargeDatabaseResponsePayloads.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\LogSignificantApiCallDurationChangesBetweenCIBuilds - Copy.feature.cs">
+      <DependentUpon>LogSignificantApiCallDurationChangesBetweenCIBuilds - Copy.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\LogSignificantDatabaseCallDurationChangesBetweenCIBuilds.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogSignificantDatabaseCallDurationChangesBetweenCIBuilds.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\LogSlowApiCalls.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogSlowApiCalls.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\LogSlowDatabaseCalls.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogSlowDatabaseCalls.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\RejectHighApiRequestVolumes.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RejectHighApiRequestVolumes.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\API\PerformanceManagement\RejectLargeApiRequestPayloads.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RejectLargeApiRequestPayloads.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Navigation\NestedNavigationWithUIRouter.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NestedNavigationWithUIRouter.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Navigation\ReviewNavigationConcepts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewNavigationConcepts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\Navigation\ValidateUserAccess.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidateUserAccess.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\ConfigureEntityManager.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigureEntityManager.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterGroupSelectPropertiesUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilterGroupSelectPropertiesUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListGroupUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListGroupUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterSelectPropertiesUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilterSelectPropertiesUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterSortSelectPropertiesUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilterSortSelectPropertiesUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListSortUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListSortUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListFilterUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListSelectPropertiesUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListSelectPropertiesUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\SearchEntityListUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchEntityListUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\UpdateAnEntityUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateAnEntityUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\ServiceModeling\UpdateBatchEntitiesUIService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateBatchEntitiesUIService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\ClientSidePagination.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientSidePagination.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\Filter.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Filter.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\Filter_old.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Filter_old.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\PaginateOnClient.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaginateOnClient.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\PaginateOnServer.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaginateOnServer.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\Grid\Sort.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sort.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\SetUpKendo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetUpKendo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\TextControl\AutoCorrect.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoCorrect.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Architecture\UI\UIControls\TextControl\Validate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Validate.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\DevelopmentEnvironmentSetup\ReviewDevelopmentEnvironmentSetup1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewDevelopmentEnvironmentSetup.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\DevelopmentEnvironmentSetup\DocumentSubscribeProjectAlerts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentSubscribeProjectAlerts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\FeatureOrScenarioCompletion\GetAFeatureOrScenarioArchitectureReview.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetAFeatureOrScenarioArchitectureReview.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\FeatureOrScenarioCompletion\CheckInAFeatureOrScenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckInAFeatureOrScenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\FeatureOrScenarioCompletion\GetACodeReviewOfAFeatureOrScenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetACodeReviewOfAFeatureOrScenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\FeatureOrScenarioCompletion\DesignAFeatureOrScenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DesignAFeatureOrScenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\FeatureOrScenarioCompletion\ReviewTheFeatureOrScenarioCompletionProcess.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewTheFeatureOrScenarioCompletionProcess.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Development\FeatureOrScenarioCompletion\GetAQAReviewOfAFeatureOrScenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetAQAReviewOfAFeatureOrScenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ProductManagement\BacklogManagement\ReviewTheBacklogPrioritizingProcess.feature.cs">
+      <DependentUpon>ReviewTheBacklogPrioritizingProcess.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\ProductManagement\BacklogManagement\DefineDocumentationFeatures.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineDocumentationFeatures.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ProductManagement\BacklogManagement\DefineTaskFeatures.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefineTaskFeatures.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ProductManagement\BacklogManagement\ReviewTaskFeatureFunctionality.feature.cs">
+      <DependentUpon>ReviewTaskFeatureFunctionality.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Features\ProductManagement\BacklogManagement\ReviewDocumentationFeatureFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewDocumentationFeatureFunctionality.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\QualityAssurance\ExploratoryTesting\EmployeeTabTest.feature.cs">
+      <DependentUpon>EmployeeTabTest.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\ReleaseManagement\SourceCodeSetup\SourceControlProvisioning.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SourceControlProvisioning.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CDSInitiativesPage.cs" />
+    <Compile Include="Pages\EmployeePage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\PageNavigator.cs" />
+    <Compile Include="Steps\DefineDocumentationFeaturesSteps.cs" />
+    <Compile Include="Steps\DefineTaskFeaturesSteps.cs" />
+    <Compile Include="Steps\DocumentGroupEntitiesByDatabaseSchemaSteps.cs" />
+    <Compile Include="Steps\DocumentSubscribeProjectAlertsSteps.cs" />
+    <Compile Include="Steps\EmployeeTabTestSteps.cs" />
+    <Compile Include="Steps\FilterSteps.cs" />
+    <Compile Include="Steps\LogAPICallsSteps.cs" />
+    <Compile Include="Steps\SearchEntityListUIServiceSteps.cs" />
+    <Compile Include="Steps\SearchEntityListWithExpandedEntitiesUIServiceSteps.cs" />
+    <Compile Include="Steps\SettingUpSolutionDocumentationSteps.cs" />
+    <Compile Include="Steps\TaskSteps.cs" />
+    <Compile Include="Steps\DocumentationSteps.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\TestDriverHelperFrameworkSteps.cs" />
+    <Compile Include="Steps\UsersSteps.cs" />
+    <Compile Include="Steps\UserVerificationSteps.cs" />
+    <Compile Include="Steps\ViewCDSIntTaskDetailsSteps.cs" />
+    <Compile Include="Steps\ValidateDocumentationSteps.cs" />
+    <Compile Include="Support\Authentication\OAuthHelper.cs" />
+    <Compile Include="Support\GenericExtensions.cs" />
+    <Compile Include="Support\SiteValidator\DocPageValidator.cs" />
+    <Compile Include="Support\SiteValidator\IBadLinkResolver.cs" />
+    <Compile Include="Support\SiteValidator\IPageValidator.cs" />
+    <Compile Include="Support\SiteValidator\PageLink.cs" />
+    <Compile Include="Support\SiteValidator\PageValidationError.cs" />
+    <Compile Include="Support\SiteValidator\SiteValidator.cs" />
+    <Compile Include="Support\SiteValidator\Page.cs" />
+    <Compile Include="Support\SiteValidator\DocPageValidatorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocPageValidatorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Support\SiteValidator\SiteValidatorResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteValidatorResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Support\TestSettings.cs" />
+    <Compile Include="Support\SeleniumController.cs" />
+    <Compile Include="Support\SeleniumStepsBase.cs" />
+    <Compile Include="Support\SeleniumSupport.cs" />
+    <Compile Include="Support\WebDriverExtensions.cs" />
+    <Compile Include="UnitTest1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\PhantomJS.1.9.8\tools\phantomjs\phantomjs.exe">
+      <Link>phantomjs.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="phantomjs-license.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\AspNetSqlAuthentication.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AspNetSqlAuthentication.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\AuthenticateViaOAuthResourceOwnerPasswordCredentials.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenticateViaOAuthResourceOwnerPasswordCredentials.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\AutenticateViaFormsAuthentication.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AutenticateViaFormsAuthentication.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Caching\ReviewCachingArchitecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewCachingArchitecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\ReviewDataAccessArchitecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewDataAccessArchitecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ReviewDataValidationArchiecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewDataValidationArchiecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithChangeTrackingProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithChangeTrackingProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithDateProperty.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithDateProperty.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithDecimalProperty.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithDecimalProperty.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithForeignKey.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithForeignKey.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithIntegerProperty.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithIntegerProperty.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithMultipleForeignKeys.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithMultipleForeignKeys.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithPrimaryKey.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithPrimaryKey.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\DefineEntityWithStringProperty.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineEntityWithStringProperty.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\ModifyEntityAddForeignKey.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ModifyEntityAddForeignKey.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\ModifyEntityChangePropertyType.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ModifyEntityChangePropertyType.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\EntityModeling\ReviewEntityModelingArchiecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewEntityModelingArchiecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\AccessBreezeControllerMultipleEntityFrameworkContext.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccessBreezeControllerMultipleEntityFrameworkContext.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\AccessBreezeControllerSingleEntityFrameworkContext.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccessBreezeControllerSingleEntityFrameworkContext.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\RetrieveEntityQuery.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveEntityQuery.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\RetrieveJSONData.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveJSONData.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\RetrieveMetaData.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveMetaData.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\RetrieveOData.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveOData.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\SaveBatchChanges.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SaveBatchChanges.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ServiceModeling\SaveSingleChange.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SaveSingleChange.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\DocumentGenerateEntityMigrationMultipleDatabaseContexts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentGenerateEntityMigrationMultipleDatabaseContexts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\DocumentGroupEntitiesByDatabaseSchema.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentGroupEntitiesByDatabaseSchema.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\InjectDatabaseContextToController.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>InjectDatabaseContextToController.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\PageObjectTutorial.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PageObjectTutorial.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\DocumentSupportMethodsInstructions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentSupportMethodsInstructions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\ValidateDocumentation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateDocumentation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\ReviewDocumentationArchitecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewDocumentationArchitecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Docs\SettingUpSolutionDocumentation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SettingUpSolutionDocumentation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Test\ReviewPerformanceTestingResearchDoc.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewPerformanceTestingResearchDoc.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Test\ReviewTestArchitecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewTestArchitecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\Test\TestDriverHelperFramework.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TestDriverHelperFramework.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Analytics\Angularytics.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Angularytics.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authentication\AuthenticateViaCookies.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenticateViaCookies.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authentication\AuthenticateViaTokens.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenticateViaTokens.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authentication\LoginAuthenticationViaExternalSource.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LoginAuthenticationViaExternalSource.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authentication\LoginAuthenticationViaOAuth.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LoginAuthenticationViaOAuth1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authentication\ReviewUIAuthenticationArchitectureOverview.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewUIAuthenticationArchitectureOverview.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authorization\EmployeesSection.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EmployeesSection.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authorization\LoginAuthorizationViaOAuth.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LoginAuthorizationViaOAuth.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authorization\Roles.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Roles.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Authorization\Users.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Users.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\AutoComplete\GeoDataAutoComplete.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GeoDataAutoComplete.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Caching\CacheEntityListOnClient.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CacheEntityListOnClient.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Caching\CacheEntityListOnServer.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CacheEntityListOnServer.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Caching\InvalidateCache.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>InvalidateCache.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Caching\RetrieveClientCacheVersion.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveClientCacheVersion.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Caching\DumpClientCache.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DumpClientCache.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Caching\DumpServerCache.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DumpServerCache.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Caching\InvalidateServerCache.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>InvalidateServerCache.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Caching\RetrieveServerCacheVersion.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveServerCacheVersion.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\CreateAnEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateAnEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\CreateAnEntityWithOnlyRequiredProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateAnEntityWithOnlyRequiredProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\CreateAnEntityWithoutAllRequiredProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateAnEntityWithoutAllRequiredProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\CreateAnIncompleteEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateAnIncompleteEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\DeleteAnActiveEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteAnActiveEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\DeleteAnEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteAnEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\DeleteAnInactiveEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteAnInactiveEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\DeleteANonExistentEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteANonExistentEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\RetrieveAInactiveEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveAInactiveEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\RetrieveAllEntitiesSingleType.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveAllEntitiesSingleType.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\RetrieveAnActiveEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveAnActiveEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\RetrieveAnEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveAnEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\RetrieveANonExistentEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RetrieveANonExistentEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityList.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityList.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityListFilter.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilter.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityListGroup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListGroup.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityListFilterGroupSelectProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilterGroupSelectProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityListFilterSelectProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilterSelectProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityListSort.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListSort.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityListFilterSortSelectProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilterSortSelectProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\SearchEntityListSelectProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListSelectProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateActivateAnEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateActivateAnEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateActivateANonExistentEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateActivateANonExistentEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateAnEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateAnEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateAnEntitySystemProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateAnEntitySystemProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateAnInactiveEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateAnInactiveEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateANonExistentEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateANonExistentEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateInactivateAlreadyInactiveEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateInactivateAlreadyInactiveEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateInactivateAnEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateInactivateAnEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataAccess\UpdateInactivateANonExistentEntity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateInactivateANonExistentEntity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateCountryList.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateCountryList.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateCurrencyNumberGreaterOrEqualZero.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateCurrencyNumberGreaterOrEqualZero.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateDate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateDate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateEmailAddress.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateEmailAddress.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateNegativeNumber.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateNegativeNumber.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateNumber.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateNumber.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidatePhoneNumber.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidatePhoneNumber.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidatePositiveNumber.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidatePositiveNumber.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateUSStateList.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateUSStateList.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\DataValidation\ValidateWebsiteAddress.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateWebsiteAddress.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ReviewApiArchitecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewApiArchitecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ReviewApiProjectStructure.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewApiProjectStructure.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\ReviewApiAuthenticationArchitectureOverview.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewApiAuthenticationArchitectureOverview.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\AuthenticateViaClaimsBasedSecurity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenticateViaClaimsBasedSecurity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\AuthenticateViaCustomSecurity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenticateViaCustomSecurity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\AuthenticateViaOAuthSecurity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenticateViaOAuthSecurity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authentication\AuthenicateViaWindowsSecurity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthenicateViaWindowsSecurity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authorization\ReviewApiAuthorizationArchitecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewApiAuthorizationArchitecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authorization\AuthorizeViaClaims.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthorizeViaClaims.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authorization\AuthorizeViaContent.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthorizeViaContent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Authorization\AuthorizeViaRoles.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AuthorizeViaRoles.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\RequireApiHttpsCommunication.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RequireApiHttpsCommunication.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ExceptionHandling\HandleConcurrencyExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandleConcurrencyExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ExceptionHandling\HandleCustomExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandleCustomExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ExceptionHandling\HandleDatabaseConnectivityExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandleDatabaseConnectivityExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ExceptionHandling\HandleDatabaseConstraintExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandleDatabaseConstraintExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ExceptionHandling\HandleDatabaseTimeoutExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandleDatabaseTimeoutExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ExceptionHandling\HandleInvalidRequestParameterExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandleInvalidRequestParameterExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\ExceptionHandling\HandleMissingRecordExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HandleMissingRecordExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Logging\LogApiCalls.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogApiCalls.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Logging\LogCustomMessages.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogCustomMessages.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Logging\LogExceptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogExceptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Logging\LogDatabaseCalls.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogDatabaseCalls.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Logging\LogUIActions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogUIActions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Logging\ReviewLoggingArchitecture.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewLoggingArchitecture.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\Logging\ViewLogs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ViewLogs.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\LogLargeDatabaseResponsePayloads.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogLargeDatabaseResponsePayloads.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\LogLargeApiResponsePayloads.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogLargeApiResponsePayloads.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\LogSignificantApiCallDurationChangesBetweenCIBuilds - Copy.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogSignificantApiCallDurationChangesBetweenCIBuilds - Copy.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\LogSignificantDatabaseCallDurationChangesBetweenCIBuilds.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogSignificantDatabaseCallDurationChangesBetweenCIBuilds.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\LogSlowApiCalls.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogSlowApiCalls.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\LogSlowDatabaseCalls.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LogSlowDatabaseCalls.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\RejectHighApiRequestVolumes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RejectHighApiRequestVolumes.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\API\PerformanceManagement\RejectLargeApiRequestPayloads.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RejectLargeApiRequestPayloads.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\DataValidation\DataFieldValidaiton.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataFieldValidaiton.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\HttpsCommunication.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HttpsCommunication.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Navigation\Dashboard.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Dashboard.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Navigation\DocumentAngularJSRoutingConcepts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentAngularJSRoutingConcepts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Navigation\MainNavigation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MainNavigation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Navigation\NestedNavigationWithUIRouter.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NestedNavigationWithUIRouter.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Navigation\ReviewNavigationConcepts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewNavigationConcepts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Navigation\ShoppingCart.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ShoppingCart.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Navigation\ValidateUserAccess.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidateUserAccess.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Registration\Registration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Registration.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Registration\UserVerification.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserVerification1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\Search\FullTextSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FullTextSearch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\ConfigureEntityManager.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigureEntityManager.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterGroupSelectPropertiesUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilterGroupSelectPropertiesUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListGroupUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListGroupUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterSelectPropertiesUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilterSelectPropertiesUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterSortSelectPropertiesUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilterSortSelectPropertiesUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListSortUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListSortUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListFilterUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListFilterUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListSelectPropertiesUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListSelectPropertiesUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\SearchEntityListWithExpandedEntitiesUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchEntityListWithExpandedEntitiesUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\UpdateAnEntityUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateAnEntityUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\ServiceModeling\UpdateBatchEntitiesUIService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateBatchEntitiesUIService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\ClickToEdit.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ClickToEdit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\File Upload\AngularFileUpload.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AngularFileUpload.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\ClientSidePagination.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ClientSidePagination.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\DataGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\DataGridOptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataGridOptions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\FileUpload.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FileUpload.feature.cs</LastGenOutput>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\Filter.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Filter.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\Filter_old.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Filter_old.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\PaginateOnClient.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PaginateOnClient.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\PaginateOnServer.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PaginateOnServer.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\ServerQuery.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ServerQuery.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\Grid\Sort.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Sort.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\SetUpKendo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SetUpKendo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\TextControl\AutoCorrect.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AutoCorrect.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UIControls\TextControl\Validate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Validate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UserProfile\ChangePassword.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChangePassword.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Architecture\UI\UserProfile\EditProfile.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditProfile.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Development\DevelopmentEnvironmentSetup\ReviewDevelopmentEnvironmentSetup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewDevelopmentEnvironmentSetup1.feature.cs</LastGenOutput>
+    </None>
+    <Content Include="..\packages\WebDriver.ChromeDriver.win32.2.11.0.0\content\chromedriver.exe">
+      <Link>chromedriver.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Features\tasks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Features\Development\DevelopmentEnvironmentSetup\DocumentSubscribeProjectAlerts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DocumentSubscribeProjectAlerts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Development\FeatureOrScenarioCompletion\GetAFeatureOrScenarioArchitectureReview.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetAFeatureOrScenarioArchitectureReview.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Development\FeatureOrScenarioCompletion\CheckInAFeatureOrScenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckInAFeatureOrScenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Development\FeatureOrScenarioCompletion\GetACodeReviewOfAFeatureOrScenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetACodeReviewOfAFeatureOrScenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Development\FeatureOrScenarioCompletion\DesignAFeatureOrScenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DesignAFeatureOrScenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Development\FeatureOrScenarioCompletion\ReviewTheFeatureOrScenarioCompletionProcess.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewTheFeatureOrScenarioCompletionProcess.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Development\FeatureOrScenarioCompletion\GetAQAReviewOfAFeatureOrScenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetAQAReviewOfAFeatureOrScenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ProductManagement\BacklogManagement\ReviewTheBacklogPrioritizingProcess.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewTheBacklogPrioritizingProcess.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ProductManagement\BacklogManagement\DefineDocumentationFeatures.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineDocumentationFeatures.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ProductManagement\BacklogManagement\DefineTaskFeatures.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefineTaskFeatures.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ProductManagement\BacklogManagement\ReviewTaskFeatureFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewTaskFeatureFunctionality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ProductManagement\BacklogManagement\ReviewDocumentationFeatureFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ReviewDocumentationFeatureFunctionality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\QualityAssurance\ExploratoryTesting\EmployeeTabTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EmployeeTabTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\QualityAssurance\PerformanceTesting\ResearchPerformanceTesting.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ResearchPerformanceTesting.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ReleaseManagement\SourceCodeSetup\SourceControlProvisioning.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SourceControlProvisioning.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Architecture\API\DependencyManagement\" />
+    <Folder Include="Features\Architecture\API\Internationalization\" />
+    <Folder Include="Features\Architecture\API\ResourceManagement\" />
+    <Folder Include="Features\Architecture\UI\Bundling\" />
+    <Folder Include="Features\Architecture\UI\DataStrapping\" />
+    <Folder Include="Features\Architecture\UI\DependencyManagement\" />
+    <Folder Include="Features\Architecture\UI\EntityModeling\" />
+    <Folder Include="Features\Architecture\UI\ExceptionHandling\" />
+    <Folder Include="Features\Architecture\UI\Internationalization\" />
+    <Folder Include="Features\Architecture\UI\Logging\" />
+    <Folder Include="Features\Architecture\UI\PerformanceManagement\" />
+    <Folder Include="Features\Architecture\UI\ResourceManagement\" />
+    <Folder Include="Features\Architecture\UI\SolutionStructure\" />
+    <Folder Include="Features\Development\Debugging\" />
+    <Folder Include="Features\ProductManagement\DailyScrums\" />
+    <Folder Include="Features\ProductManagement\ProductPlanning\" />
+    <Folder Include="Features\ProductManagement\SprintPlanning\" />
+    <Folder Include="Features\ProductManagement\SprintRetrospective\" />
+    <Folder Include="Features\ProductManagement\SprintReview\" />
+    <Folder Include="Features\QualityAssurance\DefectManagement\" />
+    <Folder Include="Features\QualityAssurance\SecurityTesting\" />
+    <Folder Include="Features\QualityAssurance\TestExecution\" />
+    <Folder Include="Features\QualityAssurance\TestManagement\" />
+    <Folder Include="Features\QualityAssurance\TestPlanning\" />
+    <Folder Include="Features\QualityAssurance\UserAcceptanceTesting\" />
+    <Folder Include="Features\ReleaseManagement\AutomatedDeployments\" />
+    <Folder Include="Features\ReleaseManagement\BranchingStrategy\" />
+    <Folder Include="Features\ReleaseManagement\ContinousIntegration\AutomatedTestExecution\" />
+    <Folder Include="Features\ReleaseManagement\ContinousIntegration\CodeCoverageAnalysis\" />
+    <Folder Include="Features\ReleaseManagement\ContinousIntegration\StaticCodeAnalysis\" />
+    <Folder Include="Features\ReleaseManagement\NonProductionEnvironments\" />
+    <Folder Include="Features\ReleaseManagement\ProductionEnvironment\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Support\SiteValidator\DocPageValidatorResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocPageValidatorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Support\SiteValidator\SiteValidatorResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SiteValidatorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

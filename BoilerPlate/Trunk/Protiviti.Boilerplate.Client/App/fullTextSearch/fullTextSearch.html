@@ -1,0 +1,48 @@
+﻿<section id="fulltextsearch-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="SearchResults">
+                                    Search Results
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-inline" ng-submit="getSearchResults()" role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-sm" ng-model="filter" placeholder="Search...">
+                                        <button type="submit" class="btn btn-info btn-sm"><strong>Search</strong></button>
+                                    </div>
+                                </form>
+                                <table class="table table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Entity Type</th>
+                                            <th>Search Title</th>
+                                            <th>Search Body (Serialized object for searching on multiple properties)</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="a in searchResults">
+                                            <td>{{a.EntityTypeName}}</td>
+                                            <td>{{a.SearchTitle}}</td>
+                                            <td>{{a.SearchBody}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

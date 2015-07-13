@@ -1,0 +1,76 @@
+﻿<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary widget">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Technology Overview">
+                                    Technology Overview
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li data-ng-repeat="p in vm.technologies"><a href="{{p.url}}" target="_blank">{{p.name}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel-group" id="accordion2">
+                        <div class="panel panel-info widget">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    Upcoming Technology Overview
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li data-ng-repeat="p in vm.upcomingTechnologies"><a href="{{p.url}}" target="_blank">{{p.name}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel-group" id="accordion3">
+                        <div class="panel panel-info widget">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    Patterns
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li data-ng-repeat="p in vm.patterns"><a href="#" target="_blank">{{p.name}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>

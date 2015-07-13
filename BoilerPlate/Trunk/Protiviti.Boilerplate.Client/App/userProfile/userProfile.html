@@ -1,0 +1,124 @@
+﻿
+<section id="registration-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="panel-group" id="accordion1">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            Update Profile
+                            <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                        </h4>
+                    </div>
+
+                    <div class="panel-body" ng-controller="userProfileController">
+                        <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                            <strong> {{message}}</strong>
+                        </div>
+                        <div id="readOnlyForm">
+                            <form name="updateProfileForm" id="updateProfileForm" role="form" novalidate>
+                                <fieldset>
+                                    <legend></legend>
+                                    <fieldset>
+                                        <legend>Profile Information</legend>
+                                        <div class="verySmall">
+                                            <label for="salutation">Salutation</label>
+                                            <select class="form-control" name="salutation" id="salutation" ng-model="person.salutation" ng-options="salutation for salutation in salutations">
+                                                <option data-ng-model="person.salutation">--Select--</option>
+                                            </select>
+                                        </div>
+                                        <div class="verySmall">
+                                            <label for="firstName">First Name &nbsp;<span class="required">*</span></label>
+                                            <input type="text" class="form-control" name="firstName" id="firstName" data-ng-model="person.firstName" required />
+                                            <div id="requiredFName" ng-show="updateProfileForm.firstName.$error.required && updateProfileForm.isSubmitted" class="required">Required</div>
+                                        </div>
+                                        <div class="verySmall">
+                                            <label for="lastName">Last Name &nbsp;<span class="required">*</span></label>
+                                            <input type="text" class="form-control" data-ng-model="person.lastName" name="lastName" id="lastName" required />
+                                            <div ng-show="updateProfileForm.lastName.$error.required && updateProfileForm.isSubmitted" class="required">Required</div>
+                                        </div>
+                                        <br />
+                                        <div class="verySmall">
+                                            <label for="suffix">Suffix</label>
+                                            <input type="text" class="form-control" data-ng-model="person.suffix" id="suffix" />
+                                        </div>
+                                        <div class="verySmall">
+                                            <label for="title">Title</label>
+                                            <input type="text" class="form-control" data-ng-model="person.title" id="title" />
+                                        </div>
+                                        <br />
+                                        <div class="verySmall">
+                                            <label for="phone">Phone Number &nbsp;<span class="required">*</span></label>
+                                            <input type="text" class="form-control" name="phone" id="phone" data-ng-model="person.contact.phone" phone="person.contact.phone" required />
+                                            <div ng-show="updateProfileForm.phone.$error.required && updateProfileForm.isSubmitted" class="required">Required</div>
+                                            <div ng-show="updateProfileForm.phone.$error.phoneField" class="required">Invalid phone number</div>
+                                        </div>
+                                        <div class="verySmall">
+                                            <label for="fax">Fax </label>
+                                            <input type="text" class="form-control" data-ng-model="person.contact.fax" id="fax" />
+                                        </div>
+                                        <div class="verySmall">
+                                            <label for="cell">Cell </label>
+                                            <input type="text" class="form-control" name="cell" id="cell" data-ng-model="person.contact.cell" phone="person.contact.cell" />
+                                            <div ng-show="updateProfileForm.cell.$error.phoneField" class="required">Invalid cell phone number</div>
+                                        </div>
+
+                                    </fieldset>
+                                    <div>
+                                        <fieldset>
+                                            <legend>Address</legend>
+                                            <div class="verySmall">
+                                                <label for="addressLine1">Address Line 1 &nbsp;<span class="required">*</span></label>
+                                                <input type="text" class="form-control" data-ng-model="person.address.addressLine1" name="addressLine1" id="addressLine1" required />
+                                                <div ng-show="updateProfileForm.addressLine1.$error.required && updateProfileForm.isSubmitted" class="required">Required</div>
+                                            </div>
+                                            <div class="verySmall">
+                                                <label for="addressLine2">Address Line 2 </label>
+                                                <input type="text" class="form-control" data-ng-model="person.address.addressLine2" id="addressLine2" />
+                                            </div>
+                                            <div class="verySmall">
+                                                <label for="city">City &nbsp;<span class="required">*</span></label>
+                                                <input type="text" class="form-control" data-ng-model="person.address.cityLocality" name="cityLocality" id="cityLocality" required />
+                                                <div ng-show="updateProfileForm.cityLocality.$error.required && updateProfileForm.isSubmitted" class="required">Required</div>
+                                            </div>
+                                            <br />
+                                            <div class="verySmall">
+                                                <label for="Country">Country&nbsp;<span class="required">*</span></label>
+                                                <select name="country" class="form-control" style="width:200px" id="country" ng-model="person.address.country" ng-options="country for country in countries" required>
+                                                    <option data-ng-model="person.address.country">--Select--</option>
+                                                </select>
+                                            </div>
+                                            <div class="verySmall">
+                                                <label for="State">State&nbsp;<span class="required">*</span></label>
+                                                <select class="form-control" name="stateProvince" style="width:200px" id="stateProvince" ng-model="person.address.stateProvince" ng-options="state for state in states" required>
+                                                    <option data-ng-model="person.address.stateProvince">--Select--</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="verySmall">
+                                                <label for="PostalCode">Postal Code </label>
+                                                <input type="text" class="form-control" data-ng-model="person.address.postalCode" id="postalCode" />
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <button class="btn btn-md btn-primary btn-block" type="submit" name="submit" id="submit" ng-click="save(updateProfileForm)">Save</button>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input class="btn btn-md btn-default btn-block" type="submit" name="close" id="cancel" value="Cancel" ng-click="cancel()" />
+                                        </div>
+                                        <div class="col-md-8">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,63 @@
+﻿<section id="listroles-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a id="addrole" ui-sref="addEditRole" class="btn btn-primary navbar-right"><i class="fa fa-plus fa-fw"></i> Add</a>
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Roles-Header">
+                                    Roles
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+
+                            <div class="panel-body" id="Roles-Body">
+                                <form class="form-inline" ng-submit="searchRoles()" role="form">
+                                    <div class="form-group">
+                                        <input id="searchtextbox" type="text" class="form-control input-sm" ng-model="pagingInfo.nameFilter" placeholder="Search...">
+                                        <button id="searchbtn" type="submit" class="btn btn-info btn-sm"><strong>Search</strong></button>
+                                    </div>
+                                </form>
+                                <br />
+                                <table class="table table-condensed table-striped" id="tableRoles">
+                                    <thead>
+                                        <tr>
+                                            <th id="Roles-Results-Header-Name"><a href="" ng-click="sortRoles('Name')">Role</a></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in roles">
+                                            <td id="RoleName">{{p.Name }} {{p.IsEditable }}</td>
+                                            <td>
+                                                <a href="#/roles/roleId={{p.Id}}"><i ng-attr-id="{{'edit-'+p.Name}}" class="fa fa-pencil fa-fw"></i></a>
+                                                <!--<div ng-if="p.IsEditable == 'true' ">
+                                                    <a href="#/roles/roleId={{p.Id}}"><i class="fa fa-pencil fa-fw"></i></a>
+                                                </div>-->
+                                                <a access="Admin" href="javascript:void(0)" data-ng-click="deleteRole(p.Id,p.Name)"><i ng-attr-id="{{'delete-'+p.Name}}" class="fa fa-trash-o fa-fw"></i></a>
+                                            </td>
+
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <a title="Go to the first page" id="First-Page" class="btn btn-info btn-sm" href="" ng-click="selectFirstPage()">First Page</a>
+                                    <a title="Go to the previous page" id="Prev-Page" class="btn btn-info btn-sm" href="" ng-click="selectPreviosPage()">Previous Page</a>
+                                    <span id="pagenumber">&nbspPage: {{pagingInfo.page}}&nbsp&nbsp</span>
+                                    <a title="Go to the next page" id="Next-Page" class="btn btn-info btn-sm" href="" ng-click="selectNextPage()">Next Page</a>
+                                </div>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

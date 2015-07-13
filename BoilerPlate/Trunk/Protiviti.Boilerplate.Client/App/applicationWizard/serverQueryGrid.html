@@ -1,0 +1,57 @@
+﻿<section id="serverquerygrid-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <h5>This Server Side Paging example provides a web search like page scrolling and does not require a total items count.</h5>
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Programs">
+                                    Programs
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+                            <div class="panel-body" id="Programs-Header">
+                                <form class="form-inline" ng-submit="searchPrograms()" role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-sm" ng-model="pagingInfo.nameFilter" placeholder="Search...">
+                                        <button type="submit" class="btn btn-info btn-sm"><strong>Search</strong></button>
+                                    </div>
+                                </form>
+                                <h5>Click on column header to sort</h5>
+                                <table class="table table-condensed table-striped" id="Programs">
+                                    <thead>
+                                        <tr>
+                                            <th id="Programs-Results-Header-Name"><a href="" ng-click="sortPrograms('Name')">Name</a></th>
+                                            <th id="Programs-Results-Header-Code"><a href="" ng-click="sortPrograms('Code')">Code</a></th>
+                                            <th id="Programs-Results-Header-Cost"><a href="" ng-click="sortPrograms('Cost')">Cost</a></th>
+                                            <th id="Programs-Results-Header-Duration"><a href="" ng-click="sortPrograms('Duration')">Duration</a></th>
+                                            <th id="Programs-Results-Header-Location"><a href="" ng-click="sortPrograms('Location')">Location</a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in programs">
+                                            <td id="ProgramName">{{p.Name}}</td>
+                                            <td id="ProgramCode">{{p.Code}}</td>
+                                            <td id="ProgramCost">{{p.Cost | currency}}</td>
+                                            <td id="ProgramDuration">{{p.Duration}}</td>
+                                            <td id="ProgramLocation">{{p.Location}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a title="Go to the first page" id="First-Page" class="btn btn-info btn-sm" href="" ng-click="selectFirstPage()">First Page</a>
+                                <a title="Go to the previous page" id="Prev-Page" class="btn btn-info btn-sm" href="" ng-click="selectPreviosPage()">Previous Page</a>
+                                <span>&nbspPage: {{pagingInfo.page}}&nbsp&nbsp</span>
+                                <a title="Go to the next page" id="Next-Page" class="btn btn-info btn-sm" href="" ng-click="selectNextPage()">Next Page</a>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

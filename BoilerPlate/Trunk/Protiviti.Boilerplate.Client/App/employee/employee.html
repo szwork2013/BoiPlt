@@ -1,0 +1,66 @@
+﻿<section id="listemployees-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a id="addNewEmployee" href="#/employee/-1" class="btn btn-primary navbar-right"><i class="fa fa-plus fa-fw"></i> Add</a>
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" id="Users">
+                                    Employees
+                                    <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                </h4>
+                            </div>
+
+                            <div class="panel-body" id="Users-Header">
+                                <form class="form-inline" ng-submit="searchEmployees()" role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input-sm" ng-model="pagingInfo.nameFilter" placeholder="Search...">
+                                        <button type="submit" class="btn btn-info btn-sm"><strong>Search</strong></button>
+                                    </div>
+                                </form>
+                                <br />
+                                <table class="table table-condensed table-striped" id="Users">
+                                    <thead>
+                                        <tr>
+                                            <th id="Users-Results-Header-Id"><a href="" ng-click="sortEmployees('ID')">Id</a></th>
+                                            <th id="Users-Results-Header-FirstName"><a href="" ng-click="sortEmployees('FirstName')">First Name</a></th>
+                                            <th id="Users-Results-Header-LastName"><a href="" ng-click="sortEmployees('LastName')">Last Name</a></th>
+                                            <th id="Users-Results-Header-Division"><a href="" ng-click="sortEmployees('Division.Name')">Division</a></th>
+                                            <th id="Users-Results-Header-Designation"><a href="" ng-click="sortEmployees('Designation.DesignationName')">Designation</a></th>
+                                            <th id="Users-Results-Header-Location"><a href="" ng-click="sortEmployees('Location')">Address</a></th>
+                                            <th></th>
+                                        </tr>
+                                            
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="p in employees">
+                                            <td>{{p.ID}}</td>
+                                            <td>{{p.FirstName}}</td>
+                                            <td>{{p.LastName}}</td>
+                                            <td>{{p.Division.Name}}</td>
+                                            <td>{{p.Designation.DesignationName}}</td>
+                                            <td>{{p.Location}}</td>
+                                            <td><a href="#/employee/{{p.ID}}"><i class="fa fa-pencil fa-fw"></i></a><a access="Admin" href="javascript:void(0)" data-ng-click="deleteEmployee(p.ID)"><i class="fa fa-trash-o fa-fw"></i></a></td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <a title="Go to the first page" id="First-Page" class="btn btn-info btn-sm" href="" ng-click="selectFirstPage()">First Page</a>
+                                    <a title="Go to the previous page" id="Prev-Page" class="btn btn-info btn-sm" href="" ng-click="selectPreviosPage()">Previous Page</a>
+                                    <span id="pagenumber">&nbspPage: {{pagingInfo.page}}&nbsp&nbsp</span>
+                                    <a title="Go to the next page" id="Next-Page" class="btn btn-info btn-sm" href="" ng-click="selectNextPage()">Next Page</a>
+                                </div>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

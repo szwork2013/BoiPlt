@@ -1,0 +1,115 @@
+﻿
+
+    <section id="listusers-view" class="mainbar">
+        <section class="matter">
+            <div class="container">
+                <button class="btn btn-info btn" ng-click="back()" id="backtolist" style="text-align:right">
+                    Back to list
+                </button>
+                
+                <div class="row">
+                    <br />
+                    <div class="col-md-12">                        
+                        <div class="panel-group" id="accordion1">                            
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title" id="Users">
+                                        Edit Roles
+                                        <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                    </h4>
+                                </div>
+                                <div class="panel-body" id="Users-Header">
+                                    <section id="user-view" class="mainbar">
+
+                                        <section class="matter">
+                                            <div class="container">
+
+                                                <div class="alert alert-danger" data-ng-show="message">
+                                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                    <strong> {{message}}</strong>
+                                                </div>
+
+                                                <div class="page-header">
+                                                    <h2 id="assignRoleUser">
+                                                        {{ title }} <span ng-show="user.Id">: {{user.DisplayName}}</span>
+                                                        <small class="subject"> ({{user.Id}})</small>
+                                                    </h2>
+                                                </div>
+
+                                                <div ng-repeat="role in roles">
+                                                    <label>
+                                                        <input id="role_{{role.Id}}" type="checkbox" data-ng-model="role.Selected" checklist-value="role" data-ng-change="setRole(role)"> {{role.Name}}
+                                                        <br />
+                                                    </label>
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-group" id="accordion1">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title" id="EditPwdForUsers">
+                                        Edit Password ForUser
+                                        <a data-cc-widget-minimize allow-collapse="true" class="pull-right"></a>
+                                    </h4>
+                                </div>
+                                <div class="panel-body" id="Users-Header">
+                                    <section id="user-view" class="mainbar">
+
+                                        <section class="matter">
+                                            <div class="container">
+                                                <div id="statusMessage" style="width:1080px" data-ng-hide="validationMessage == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                                                    <strong> {{validationMessage}}</strong>
+                                                </div>
+                                                <form id="changePasswordForm" name="changePasswordForm" novalidate>
+                                                    
+                                                    <br />
+                                                    <div>
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <strong>New Password:</strong>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input name="newPassword" type="password" data-ng-model="newPassword" id="newPassword" ng-minlength=6 required />
+                                                                    <div ng-show="changePasswordForm.newPassword.$error.required && changePasswordForm.isSubmitted " id="reqNewPwd" class="required">Required</div>
+                                                                    <div ng-show="changePasswordForm.newPassword.$error.minlength && changePasswordForm.isSubmitted " id="maxLengthNewPwd" class="required">Minimum 6 letters are required</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>&nbsp</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <strong> Confirm Password:</strong>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="password" name="confirmPassword" data-ng-model="confirmPassword" id="confirmPassword" ng-model-options="{ updateOn: 'blur' }" required" />
+                                                                    <div ng-show="changePasswordForm.confirmPassword.$error.required && changePasswordForm.isSubmitted " class="required">Required</div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                        <button class="btn btn-info btn-sm" ng-click="changePwd(changePasswordForm)" id="changePwdBtn">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+

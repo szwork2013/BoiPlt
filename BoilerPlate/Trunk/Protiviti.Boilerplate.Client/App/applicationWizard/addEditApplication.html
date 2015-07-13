@@ -1,0 +1,38 @@
+﻿<section id="application-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <ul>
+                <li><a href="/Protiviti.Boilerplate.Client/#/applications">Back to list</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="matter">
+        <div class="container">
+            <h4>Information is automatically persisted as user updates the application name.</h4>
+            <br/>
+            <form name="addEditApplicationForm" novalidate>
+                <div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Application Name:
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" name="applicationName" class="form-control" data-ng-model="application.Name" required />
+                            <span class="errorMessage" ng-show="addEditApplicationForm.applicationName.$dirty && addEditApplicationForm.applicationName.$invalid">
+                                Application name is required.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </form>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <a name="ClickToEditApplicationName" href="#" editable-text="application.Name">{{ application.Name || 'empty' }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

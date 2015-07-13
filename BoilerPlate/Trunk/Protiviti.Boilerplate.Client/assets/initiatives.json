@@ -1,0 +1,68 @@
+{
+	"initiatives": [
+                {
+                    "id": 1,
+                    "name": "Sales",
+					"tasks": [
+					{
+						"id": "a",
+                        "name": "Find Proposals",
+                        "contact":  "Bob Barker"
+					},
+					{
+						"id": "b",
+						"name": "Pitch PSS Value",
+                        "contact":  "Louise Lane"
+					}
+					]
+                },
+                {
+                    "id": 2,
+                    "name": "Onboarding",
+					"tasks": [
+					{
+						"id": "a",
+						"name": "Read Employee Manual",
+                        "contact":  "Michael Jordan"
+					},
+					{
+						"id": "b",
+						"name": "Build Sample App",
+                        "contact":  "Barack Obama"
+					}
+					]
+                },
+                {
+                    "id": 3,
+                    "name": "Knowledge Base",
+					"tasks": [
+					{
+						"id": "a",
+						"name": "Develop Boilerplate Solution",
+                        "contact":  "George Washington"
+					},
+					{
+						"id": "b",
+						"name": "Research Emerging Technologies",
+                        "contact":  "John Adams"
+					}
+					]
+                },
+                {
+                    "id": 4,
+                    "name": "Training and Certifications",
+					"tasks": [
+					{
+						"id": "a",
+						"name": "Collect Team Certs",
+                        "contact":  "Grover Cleveland"
+					},
+					{
+						"id": "b",
+						"name": "Identify Relevant Trainings",
+                        "contact":  "Thomas Jefferson"
+					}
+					]
+                }
+            ]
+}

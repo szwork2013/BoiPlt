@@ -1,0 +1,139 @@
+﻿<section id="logincontroller-view" class="mainbar" data-ng-controller="angularFileUploadController">
+    <section class="matter">
+        <div class="container">
+
+            <div class="upload-div">
+                <div class="upload-buttons">
+                    <div id="editArea" class="ng-scope">
+                        <table>
+                            <tr>
+                                <td>
+                                        <fieldset>
+                                            <legend>File Upload By Submit</legend>
+                                            <form name="myForm" class="ng-dirty ng-invalid ng-invalid-required">
+                                                <table>
+                                                    <tr>
+                                                        <td id="fileTitleLabel">
+                                                            File Title:
+                                                        </td>
+
+                                                        <td>
+                                                            <input type="text" name="fileTitle" id="fileTitle" ng-model="fileTitle" size="48" required="" class="ng-pristine ng-invalid ng-invalid-required">
+                                                            <i ng-show="myForm.fileTitle.$error.required" id="titleRequired" class="">*required</i><br />
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            &nbsp
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="fileName">
+                                                            File Name:
+                                                        </td>
+                                                        <td>
+                                                            <input type="file" ng-file-select="" ng-model="picFile" name="file" id="picFile" required="" class="ng-isolate-scope ng-dirty ng-invalid ng-invalid-required" multiple>
+                                                            <i ng-show="myForm.file.$error.required" id="fileRequired" class="">*required</i>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            &nbsp
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <button ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" id="submit" disabled="disabled" class="btn btn-info btn-sm"><strong>Submit</strong></button>                                                            
+                                                        </td>
+                                                        <td>
+                                                            <img ng-show="picFile[0].dataUrl != null" id="imgPicFile" ng-src="{{picFile[0].dataUrl}}" style="width:30px; height:30px">
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            &nbsp
+                                                        </td>
+                                                    </tr>                                                   
+                                                </table>
+                                            </form>
+</fieldset>                                        
+                                </td>
+                                
+                                <td style="float:left; margin-left: 50px;">
+                                        <fieldset>
+                                            <legend>File Upload By Drag Drop</legend>
+                                            <div ng-file-drop="" ng-model="files" class="drop-box" drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" ng-multiple="true" allow-dir="true" ng-file-change="uploadPic(files)">
+                                                Drop Files here
+                                            </div>
+
+                                        </fieldset>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <br />
+                    <fieldset>
+                        <legend>Uploaded Files</legend>
+                        <form class="form-inline" ng-submit="searchFiles()" role="form">
+                            <div class="form-group">
+                                <input type="text" id="searchBox" class="form-control input-sm" ng-model="pagingInfo.nameFilter" placeholder="Search File Name...">
+                                <button type="submit" id="searchBtn" class="btn btn-info btn-sm"><strong>Search</strong></button>
+                            </div>
+                        </form>
+                        <table class="table table-condensed table-striped" id="Programs-Results-Table">
+                            <thead>
+                                <tr>
+                                    <th id="fileName-Header" style="width:400px"><a href="" ng-click="sortFiles('FileName')">Name</a></th>
+                                    <th id="fileTitle-Header" style="width:200px"><a href="" ng-click="sortFiles('Title')">Title</a></th>
+                                    <th id="fileUploaded Date-Header" style="width:200px"><a href="" ng-click="sortFiles('CreatedDate')">Uploaded Date</a></th>
+                                    <th id="fileSize(Kb)-Header" style="width:200px"><a href="" ng-click="sortFiles('FileSize')">Size(Kb)</a></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr data-ng-repeat="p in uploadedFiles track by $index">
+                                    <td id="fileName">
+                                        <a href=""ng-hide="p.isEditMode" ng-click="downloadFile(p.Id)" style="width:30px; height:30px">&nbsp{{p.FileName}}</a>
+                                        <input type="text" ng-model="p.FileName" ng-show="p.isEditMode" style="width: 400px" name="editFileName" required/>
+                                    </td>
+                                    <td id="file.title">
+                                        <span ng-hide="p.isEditMode">{{p.Title}}</span>
+                                        <input type="text" ng-model="p.Title" ng-show="p.isEditMode" name="editFileTitle" required/>
+                                    </td>
+                                    <td id="file.title">{{p.CreatedDate | date:'MMM-dd-yyyy'}}</td>
+                                    <td id="fileSize">{{p.FileSize/1024  | number:2}}</td>
+                                    <td>
+                                        <a href="javascript:void(0)" data-ng-click="editFile(p.Id)" name="edit-{{p.FileName + '-' +p.Title}}" ng-hide="p.isEditMode">
+                                            <i ng-attr-id="{{'editFile-'+p.Id}}" class="fa fa-pencil"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" data-ng-click="deleteFile(p.Id)" name="{{p.FileName + '-' +p.Title}}" ng-hide="p.isEditMode">
+                                            <i ng-attr-id="{{'deleteFile-'+p.Id}}" class="fa fa-trash-o fa-fw"></i>
+                                        </a>
+
+                                        <button type="submit" class="btn btn-info btn-sm" data-ng-click="saveEditToDb(p)" name="saveEdit-{{p.FileName + '-' +p.Title}}" ng-show="p.isEditMode">
+                                            Save
+                                        </button>
+
+                                        <button type="submit" class="btn btn-info btn-sm" data-ng-click="cancelEdit(p)" name="cancelEdit-{{p.FileName + '-' +p.Title}}" ng-show="p.isEditMode">
+                                            Cancel
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <a title="Go to the first page" id="First-Page" class="btn btn-info btn-sm" href="" ng-click="selectFirstPage()">First Page</a>
+                            <a title="Go to the previous page" id="Prev-Page" class="btn btn-info btn-sm" href="" ng-click="selectPreviousPage()">Previous Page</a>
+                            <span id="pagenumber">&nbspPage: {{pagingInfo.page}}&nbsp&nbsp</span>
+                            <a title="Go to the next page" id="Next-Page" class="btn btn-info btn-sm" href="" ng-click="selectNextPage()">Next Page</a>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

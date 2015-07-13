@@ -1,0 +1,492 @@
+﻿body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+/*.panel-heading a:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";    
+    float: right; 
+    color: grey; 
+}
+.panel-heading a.collapsed:after {
+    content: "\e080";
+}*/
+
+/* Main */
+
+/*.mainbar {
+    position: relative;
+    /*margin-left: 230px;*/
+    margin-right: 0;
+    width: auto;
+    background: #fff;
+    min-height: 900px;
+}
+
+    .mainbar .container {
+        width: 100%;
+        padding: 0 !important;
+    }*/
+
+
+/* Widget */
+
+.widget-icons i {
+            font-size: 14px;
+            margin: 0 4px;
+        }
+
+.widget {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+    .widget hr {
+        margin: 4px 0;
+        padding: 4px 0;
+        border-top: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /*.widget .table {
+        margin: 0;
+        width: 100%;
+    }
+
+    .widget .table-bordered {
+        border: 0;
+    }
+
+        .widget .table-bordered th {
+            border-bottom: 1px solid #ccc !important;
+        }
+
+        .widget .table-bordered td {
+            border-top: 0 !important;
+            border-bottom: 1px solid #ccc !important;
+        }
+
+            .widget .table-bordered td:first-child, .widget .table-bordered th:first-child {
+                border-left: 0;
+            }*/
+
+    .widget .padd {
+        padding: 15px;
+    }
+
+    .widget .widget-head {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        color: #777;
+        font-size: 18px;
+        padding: 12px 15px;
+    }
+
+        .widget .widget-head .widget-icons i {
+            font-size: 14px;
+            margin: 0 4px;
+        }
+
+        .widget .widget-head .widget-icons a {
+            color: #aaa;
+        }
+
+            .widget .widget-head .widget-icons a:hover {
+                color: #888;
+            }
+
+    .widget .widget-content {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .widget .widget-foot {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-top: 0;
+        padding: 8px 15px;
+        font-size: 13px;
+        color: #555;
+    }
+
+    /* Widget colors */
+
+    .widget.wred .widget-head {
+        background-color: #fa3031;
+        border: 1px solid #fa3031;
+        color: #fff;
+    }
+
+    .widget.wlightblue .widget-head {
+        background-color: #52b9e9;
+        border: 1px solid #52b9e9;
+        color: #fff;
+    }
+
+    .widget.wblue .widget-head {
+        background-color: #1171a3;
+        border: 1px solid #1171a3;
+        color: #fff;
+    }
+
+    .widget.wgreen .widget-head {
+        background-color: #43c83c;
+        border: 1px solid #43c83c;
+        color: #fff;
+    }
+
+    .widget.worange .widget-head {
+        background-color: #f88529;
+        border: 1px solid #f88529;
+        color: #fff;
+    }
+
+    .widget.wviolet .widget-head {
+        background-color: #932ab6;
+        border: 1px solid #932ab6;
+        color: #fff;
+    }
+
+        .widget.wred .widget-head .widget-icons a,
+        .widget.wblue .widget-head .widget-icons a,
+        .widget.wlightblue .widget-head .widget-icons a,
+        .widget.worange .widget-head .widget-icons a,
+        .widget.wgreen .widget-head .widget-icons a,
+        .widget.wviolet .widget-head .widget-icons a {
+            color: #fff;
+        }
+
+            .widget.wred .widget-head .widget-icons a:hover,
+            .widget.wblue .widget-head .widget-icons a:hover,
+            .widget.wlightblue .widget-head .widget-icons a:hover,
+            .widget.worange .widget-head .widget-icons a:hover,
+            .widget.wgreen .widget-head .widget-icons a:hover,
+            .widget.wviolet .widget-head .widget-icons a:hover {
+                color: #eee;
+            }
+
+    /* Widget white extras */
+
+    .widget .nav-tabs > li a {
+        padding: 5px 10px;
+    }
+
+    .widget .nav-tabs {
+        margin-bottom: 5px;
+    }
+
+    .widget .tab-content {
+        margin-bottom: 10px;
+    }
+
+.blah[ui-view] {
+    height: 65px;
+}
+
+.ui-view-container {
+    position: relative;
+}
+/*#region Angular ng-include, ng-view, ng-repeat shuffle animations*/
+
+[ui-view].ng-enter,
+[ui-view].ng-leave {
+    position: relative;
+}
+
+[ui-view].ng-enter {
+    -moz-transition: ease-out all 0.2s 0.3s;
+    -o-transition: ease-out all 0.2s 0.3s;
+    -webkit-transition: ease-out all 0.2s 0.3s;
+    transition: ease-out all 0.2s 0.3s;
+    left: 2em;
+    opacity: 0;
+}
+
+[ui-view].ng-enter.ng-enter-active {
+        left: 0;
+        opacity: 1;
+    }
+
+[ui-view].ng-leave {
+    -moz-transition: 0.2s ease-out all;
+    -o-transition: 0.2s ease-out all;
+    -webkit-transition: 0.2s ease-out all;
+    transition: 0.2s ease-out all;
+    left: 0;
+    opacity: 1;
+}
+
+[ui-view].ng-leave.ng-leave-active {
+        left: 2em;
+        opacity: 0;
+    }
+/*#endregion*/
+
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+.wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.wrapper.toggled {
+    padding-left: 250px;
+}
+
+.sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #395c82;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.wrapper.toggled .sidebar-wrapper {
+    width: 250px;
+}
+
+.page-content-wrapper {
+    width: 100%;
+    padding: 15px;
+}
+
+.wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    .wrapper {
+        padding-left: 250px;
+    }
+
+    .wrapper.toggled {
+        padding-left: 0;
+    }
+
+    .sidebar-wrapper {
+        width: 250px;
+    }
+
+    .wrapper.toggled .sidebar-wrapper {
+        width: 0;
+    }
+
+    .page-content-wrapper {
+        padding: 20px;
+    }
+
+    .wrapper.toggled .page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+/*#region fieldset divs*/
+fieldset div {
+    vertical-align: top;
+}
+div.auditPage {
+    border-left: .5em solid #CCCCCC;
+    padding-left: 2em;
+}
+li.actions a {
+    white-space: nowrap;
+    font-size: 1.25em;
+}
+fieldset div.veryTiny {
+    width: 7%;
+    display: inline-block;
+}
+fieldset div.tiny {
+    width: 19.5%;
+    display: inline-block;
+    padding-bottom:1.5em;
+}
+fieldset div.verySmall {
+    width: 24.5%;
+    display: inline-block;
+    padding-bottom:1em;
+}
+fieldset div.small {
+    width: 32.5%;
+    display: inline-block;
+    padding-bottom:1em;
+}
+fieldset div.medium {
+    width: 49%;
+    display: inline-block;
+    padding-bottom:1em;
+}
+fieldset div.mediumPopup {
+    width: 48%;
+    display: inline-block;
+}
+fieldset div.large {
+    width: 90%;
+    display: inline-block;
+    padding-bottom:1em;
+}
+/*#endregion fieldset divs*/
+
+/*#region fieldset div label*/
+fieldset div label, fieldset table label {
+
+    display: block;
+    color: #808184;
+    margin: .5em 0 .25em 0;
+    z-index: 10;
+}
+fieldset div label.inline{
+
+ letter-spacing: .1em;
+    display: inline;
+    color: #808184;
+    margin: .5em 0 .25em 0;
+    z-index: 10;
+}
+/*#endregion fieldset div label*/
+
+/*#region fieldset div label*/
+.required{
+    color:red;
+}
+/*#endregion fieldset div label*/
+
+.active {
+    background: rgba(255,255,255,0.2);
+}
+
+.form-group .form-inline span.z-decorator {
+    display: table-cell;
+}
+
+input + .z-decorator > .z-required {
+    top: 0;
+}
+
+.form-group .form-inline span.invalid {
+    max-height: none;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.form-inline .k-datepicker {
+    width: 100%;
+}
+
+.progress {
+	display: inline-block;
+	width: 100px;	
+	border: 3px groove #CCC;
+}
+
+.progress div {
+	font-size: smaller;
+	background: orange;
+	width: 0;
+}
+
+.thumb {
+	float: left;
+	width: 180px;
+	height: 180px;
+	padding-right: 10px;
+}
+
+form .thumb {
+	width: 24px;
+	height: 24px;
+	float: none;
+	position: relative;
+	top: 7px;
+}
+
+.drop-box {
+	background: #F8F8F8;
+	border: 5px dashed #DDD;
+	width: 200px;
+	height: 65px; 
+	text-align: center;
+	padding-top: 25px;
+	float: left;
+	margin-left: 20px;
+}
+
+.drop-box.dragover {
+	border: 5px dashed blue;
+}
+
+.drop-box.dragover-err {
+	border: 5px dashed red;
+}
+
